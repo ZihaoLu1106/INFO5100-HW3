@@ -33,6 +33,17 @@ public class Student extends Person {
         isGraduate=false;
                 
     }
+
+    public Student(String sUsername, String sPassword) {
+        this.sUsername = sUsername;
+        this.sPassword = sPassword;
+        courseHistory=new HashMap<>();
+        currentCourses=new ArrayList<>();
+        passwordHistory=new ArrayList<>();
+        GPA=0.0;
+        isGraduate=false;
+    }
+    
     
     
     

@@ -25,6 +25,14 @@ public class Professor extends Person {
         courseList=new ArrayList<>();
     }
 
+    public Professor(String pUsername, String pPassword) {
+        this.pUsername = pUsername;
+        this.pPassword = pPassword;
+        rank=new ArrayList<>();
+        courseList=new ArrayList<>();
+    }
+    
+
     
     public int getProfessorID() {
         return ProfessorID;

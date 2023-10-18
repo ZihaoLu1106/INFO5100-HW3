@@ -4,6 +4,15 @@
  */
 package ui;
 
+import java.util.ArrayList;
+import java.util.List;
+import model.Course;
+import model.Professor;
+import model.Student;
+import java.awt.CardLayout;
+import model.Admin;
+
+
 /**
  *
  * @author JANFAN
@@ -13,8 +22,17 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    Admin admin;
     public MainJFrame() {
         initComponents();
+        
+        admin=new Admin();
+        
+        StudentSignInJPanel studentSignInJPanel=new StudentSignInJPanel(admin);
+        MainPanel.add(studentSignInJPanel,"studentSignIn");
+        
+        ProfessorSignInJPanel professorSignInJPanel=new ProfessorSignInJPanel(admin);
+        MainPanel.add(professorSignInJPanel,"professorSignIn");
     }
 
     /**
@@ -26,21 +44,77 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MainPanel = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
+        studentSignIn = new javax.swing.JButton();
+        professorSignIn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        MainPanel.setLayout(new java.awt.CardLayout());
+
+        studentSignIn.setText("Sign in as Student");
+        studentSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentSignInActionPerformed(evt);
+            }
+        });
+
+        professorSignIn.setText("Sign in as Professor");
+        professorSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                professorSignInActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(studentSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addComponent(professorSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(119, 119, 119))
+        );
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(266, 266, 266)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(studentSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(professorSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(268, Short.MAX_VALUE))
+        );
+
+        MainPanel.add(mainPanel, "mainPanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void studentSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentSignInActionPerformed
+        // TODO add your handling code here:
+        CardLayout cardlayout=(CardLayout)MainPanel.getLayout();
+        cardlayout.show(MainPanel,"studentSignIn");
+    }//GEN-LAST:event_studentSignInActionPerformed
+
+    private void professorSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_professorSignInActionPerformed
+        // TODO add your handling code here:
+        CardLayout cardlayout=(CardLayout)MainPanel.getLayout();
+        cardlayout.show(MainPanel,"professorSignIn");
+    }//GEN-LAST:event_professorSignInActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +153,9 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel MainPanel;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton professorSignIn;
+    private javax.swing.JButton studentSignIn;
     // End of variables declaration//GEN-END:variables
 }
