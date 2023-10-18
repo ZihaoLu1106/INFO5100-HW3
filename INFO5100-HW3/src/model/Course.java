@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  */
 
 public class Course {
-    public enum weekday{
+    public enum WEEKDAY{
         MONDAY,
         TUESDAY,
         WEDNESDAY,
@@ -21,7 +22,7 @@ public class Course {
         SATURDAY,
         SUNDAY 
     }
-    public enum hours{
+    public enum HOUR{
         am1,//0000-0300
         am2,//0400-0700
         am3,//0800-1100
@@ -30,7 +31,7 @@ public class Course {
         pm3//1800-2300
         
     }
-    public enum year{
+    public enum YEAR{
         Y2023,
         Y2024,
         Y2025,
@@ -43,6 +44,19 @@ public class Course {
     private boolean isFall;
     private List<Student>waitList;
     private List<Student>studentList;
+    private List<WEEKDAY>weekdays;
+    private List<HOUR>hours;
+    private List<YEAR>years;
+
+    public Course() {
+        waitList=new ArrayList<>();
+        studentList=new ArrayList<>();
+        weekdays=new ArrayList<>();
+        hours=new ArrayList<>();
+        years=new ArrayList<>();
+    }
+    
+    
 
     public String getProfessorName() {
         return professorName;
@@ -106,6 +120,30 @@ public class Course {
 
     public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
+    }
+
+    public List<WEEKDAY> getWeekdays() {
+        return weekdays;
+    }
+
+    public void setWeekdays(List<WEEKDAY> weekdays) {
+        this.weekdays = weekdays;
+    }
+
+    public List<HOUR> getHours() {
+        return hours;
+    }
+
+    public void setHours(List<HOUR> hours) {
+        this.hours = hours;
+    }
+
+    public List<YEAR> getYears() {
+        return years;
+    }
+
+    public void setYears(List<YEAR> years) {
+        this.years = years;
     }
     
     
