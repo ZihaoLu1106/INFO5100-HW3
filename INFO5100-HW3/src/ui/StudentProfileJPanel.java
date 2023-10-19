@@ -27,6 +27,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
     public StudentProfileJPanel(Student student) {
         initComponents();
         this.student=student;
+        
     }
 
     /**

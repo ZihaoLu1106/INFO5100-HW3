@@ -4,6 +4,9 @@
  */
 package ui;
 
+import model.Admin;
+import model.Student;
+
 /**
  *
  * @author JANFAN
@@ -13,8 +16,12 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
     /**
      * Creates new form StudentCourseRegisterJPanel
      */
-    public StudentCourseRegisterJPanel() {
+    Admin admin;
+    Student student;
+    public StudentCourseRegisterJPanel(Admin admin,Student student) {
         initComponents();
+        this.admin=admin;
+        this.student=student;
     }
 
     /**

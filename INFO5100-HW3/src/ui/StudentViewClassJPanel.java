@@ -22,12 +22,12 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
     Admin admin;
     Course course;
     Course allCourse;
-    Student studentList;
+    Student student;
     public StudentViewClassJPanel(Course course, Admin admin, Student student) {
         initComponents();
-        admin=admin;
+        this.admin=admin;
         this.allCourse=allCourse;
-        this.studentList=studentList;
+        this.student=student;
         populateTable();
         displayProduct();
     }
@@ -304,7 +304,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        StudentCourseRegisterJPanel studentAddcourseJPanel =new StudentCourseRegisterJPanel();
+        StudentCourseRegisterJPanel studentAddcourseJPanel =new StudentCourseRegisterJPanel(admin,student);
         this.getParent().add(studentAddcourseJPanel ,"AdminLoading");
         CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
         cardlayout.show(this.getParent(), "StudentAddcourseJPanel");
