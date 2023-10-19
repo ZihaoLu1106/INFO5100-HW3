@@ -67,12 +67,12 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         btnSearchCourse = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtProfName = new javax.swing.JTextField();
-        txtRegion = new javax.swing.JTextField();
+        txtPRegion = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtPLanguage = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtTopic = new javax.swing.JTextField();
+        txtPTopic = new javax.swing.JTextField();
         btnSearchProfessor = new javax.swing.JButton();
 
         lblTitle.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
@@ -178,9 +178,9 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtRegion.addActionListener(new java.awt.event.ActionListener() {
+        txtPRegion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRegionActionPerformed(evt);
+                txtPRegionActionPerformed(evt);
             }
         });
 
@@ -188,21 +188,26 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Language:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtPLanguage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtPLanguageActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Topic:");
 
-        txtTopic.addActionListener(new java.awt.event.ActionListener() {
+        txtPTopic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTopicActionPerformed(evt);
+                txtPTopicActionPerformed(evt);
             }
         });
 
         btnSearchProfessor.setText("Search");
+        btnSearchProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchProfessorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -225,9 +230,8 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCurrentCourse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                            .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblCatelog)
                                 .addGap(4, 4, 4)
@@ -243,15 +247,15 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jLabel3)
                             .addGap(4, 4, 4)
-                            .addComponent(txtRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jLabel4)
                             .addGap(4, 4, 4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jLabel5)
                             .addGap(4, 4, 4)
-                            .addComponent(txtTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtPTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -279,11 +283,11 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtProfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(txtRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(txtTopic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPTopic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSearchProfessor)
@@ -299,17 +303,17 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtProfNameActionPerformed
 
-    private void txtRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegionActionPerformed
+    private void txtPRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPRegionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtRegionActionPerformed
+    }//GEN-LAST:event_txtPRegionActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtPLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPLanguageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtPLanguageActionPerformed
 
-    private void txtTopicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTopicActionPerformed
+    private void txtPTopicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPTopicActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTopicActionPerformed
+    }//GEN-LAST:event_txtPTopicActionPerformed
 
     private void btnJoinClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinClassActionPerformed
         // TODO add your handling code here:
@@ -348,9 +352,9 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
     private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
         // TODO add your handling code here:
-         int selectedRowIndex=tblAllCourse.getSelectedRow();
+         int selectedRowIndex= tblAllCourse.getSelectedRow();
         if(selectedRowIndex<0){
-            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            JOptionPane.showMessageDialog(this,"Please select a row to delete.");
             return;
         }
         DefaultTableModel model=(DefaultTableModel)tblAllCourse.getModel();
@@ -359,7 +363,21 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         SplitPane.setRightComponent(panel);
     }//GEN-LAST:event_btnViewDetailActionPerformed
 
+    private void btnSearchProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchProfessorActionPerformed
+        // TODO add your handling code here:
+        for(Professor professor: admin.getAllProfessor()){
+                if(txtProfName.getText().equals(professor.getName())|| txtPRegion.getText().equals(professor.getRegion())||
+                   txtPLanguage.getText().equals(professor.getLanguage()) || txtPTopic.getText().equals(professor.getTopic())){
+                      populateCurrentCourseTable();
+                }
+                else{
+                  JOptionPane.showMessageDialog(null, "The professor information you entered does not exist", "Information", JOptionPane.INFORMATION_MESSAGE); 
+                  break;                
+                }
+          }
+    }//GEN-LAST:event_btnSearchProfessorActionPerformed
 
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnJoinClass;
     private javax.swing.JButton btnSearchCourse;
@@ -371,16 +389,16 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblCatelog;
     private javax.swing.JLabel lblCourseHistory;
     private javax.swing.JLabel lblCurrentCourse;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblAllCourse;
     private javax.swing.JTable tblAllProfessor;
+    private javax.swing.JTextField txtPLanguage;
+    private javax.swing.JTextField txtPRegion;
+    private javax.swing.JTextField txtPTopic;
     private javax.swing.JTextField txtProfName;
-    private javax.swing.JTextField txtRegion;
-    private javax.swing.JTextField txtTopic;
     private javax.swing.JTextField txtccode;
     // End of variables declaration//GEN-END:variables
 

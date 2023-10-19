@@ -37,10 +37,8 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="lblTitle" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblCurrentCourse" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="btnViewDetail" min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" pref="772" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="btnViewDetail" min="-2" pref="101" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" pref="772" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblCatelog" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -58,15 +56,15 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Component id="txtRegion" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="txtPRegion" min="-2" pref="70" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Component id="jTextField4" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="txtPLanguage" min="-2" pref="70" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Component id="txtTopic" min="-2" pref="73" max="-2" attributes="0"/>
+                          <Component id="txtPTopic" min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -100,11 +98,11 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtProfName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtRegion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPRegion" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPLanguage" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtTopic" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPTopic" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -303,9 +301,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtProfNameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtRegion">
+    <Component class="javax.swing.JTextField" name="txtPRegion">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRegionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPRegionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -318,9 +316,9 @@
         <Property name="text" type="java.lang.String" value="Language:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="txtPLanguage">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPLanguageActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -328,15 +326,18 @@
         <Property name="text" type="java.lang.String" value="Topic:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtTopic">
+    <Component class="javax.swing.JTextField" name="txtPTopic">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTopicActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPTopicActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSearchProfessor">
       <Properties>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchProfessorActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
