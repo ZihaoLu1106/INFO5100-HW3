@@ -45,15 +45,15 @@ public class Course {
     private List<Student>waitList;
     private List<Student>studentList;
     private List<WEEKDAY>weekdays;
-    private List<HOUR>hours;
-    private List<YEAR>years;
+    private HOUR hours;
+    private YEAR years;
 
     public Course() {
         waitList=new ArrayList<>();
         studentList=new ArrayList<>();
         weekdays=new ArrayList<>();
-        hours=new ArrayList<>();
-        years=new ArrayList<>();
+        //hours=new ArrayList<>();
+        //years=new ArrayList<>();
     }
     
     
@@ -130,22 +130,23 @@ public class Course {
         this.weekdays = weekdays;
     }
 
-    public List<HOUR> getHours() {
+    public HOUR getHours() {
         return hours;
     }
 
-    public void setHours(List<HOUR> hours) {
+    public void setHours(HOUR hours) {
         this.hours = hours;
     }
 
-    public List<YEAR> getYears() {
+    public YEAR getYears() {
         return years;
     }
 
-    public void setYears(List<YEAR> years) {
+    public void setYears(YEAR years) {
         this.years = years;
     }
-    
+
+
     
     
 }

@@ -28,160 +28,20 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
 
         SplitPane = new javax.swing.JSplitPane();
         workAreaPanel = new javax.swing.JPanel();
-        lblTitle = new javax.swing.JLabel();
-        lblCurrentCourse = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblCurrentCourse = new javax.swing.JTable();
-        btnDropClass = new javax.swing.JButton();
-        btnJoinClass = new javax.swing.JButton();
-        btnViewDetail = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblCourseHistory = new javax.swing.JTable();
-        lblCourseHistory = new javax.swing.JLabel();
-        btnViewDetail1 = new javax.swing.JButton();
         controlPanel = new javax.swing.JPanel();
         btnShowCourse = new javax.swing.JButton();
         btnShowProfile = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
 
-        lblTitle.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        lblTitle.setText("Course Management");
-
-        lblCurrentCourse.setText("Current Course:");
-
-        tblCurrentCourse.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Course Code", "Semester", "Weekday", "Hour", "Capacity", "Current student", "Grade"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tblCurrentCourse);
-        if (tblCurrentCourse.getColumnModel().getColumnCount() > 0) {
-            tblCurrentCourse.getColumnModel().getColumn(0).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(1).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(2).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(3).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(4).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(5).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(5).setHeaderValue("Current student");
-            tblCurrentCourse.getColumnModel().getColumn(6).setResizable(false);
-        }
-
-        btnDropClass.setText("Drop Class");
-
-        btnJoinClass.setText("Join Another Class");
-        btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnJoinClassActionPerformed(evt);
-            }
-        });
-
-        btnViewDetail.setText("View Detail");
-
-        tblCourseHistory.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Course Code", "Professor", "Semester", "Weekday", "Hour", "Capacity", "Grade"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tblCourseHistory);
-        if (tblCourseHistory.getColumnModel().getColumnCount() > 0) {
-            tblCourseHistory.getColumnModel().getColumn(0).setResizable(false);
-            tblCourseHistory.getColumnModel().getColumn(1).setResizable(false);
-            tblCourseHistory.getColumnModel().getColumn(2).setResizable(false);
-            tblCourseHistory.getColumnModel().getColumn(3).setResizable(false);
-            tblCourseHistory.getColumnModel().getColumn(4).setResizable(false);
-            tblCourseHistory.getColumnModel().getColumn(5).setResizable(false);
-            tblCourseHistory.getColumnModel().getColumn(6).setResizable(false);
-        }
-
-        lblCourseHistory.setText("Course History:");
-
-        btnViewDetail1.setText("Rate your professor");
-
         javax.swing.GroupLayout workAreaPanelLayout = new javax.swing.GroupLayout(workAreaPanel);
         workAreaPanel.setLayout(workAreaPanelLayout);
         workAreaPanelLayout.setHorizontalGroup(
             workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(workAreaPanelLayout.createSequentialGroup()
-                .addGroup(workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(workAreaPanelLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(workAreaPanelLayout.createSequentialGroup()
-                                .addGroup(workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCurrentCourse)
-                                    .addComponent(lblTitle))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workAreaPanelLayout.createSequentialGroup()
-                        .addGap(0, 32, Short.MAX_VALUE)
-                        .addGroup(workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCourseHistory)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workAreaPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workAreaPanelLayout.createSequentialGroup()
-                        .addComponent(btnViewDetail1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workAreaPanelLayout.createSequentialGroup()
-                        .addComponent(btnDropClass, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnViewDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnJoinClass, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
-                        .addContainerGap())))
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         workAreaPanelLayout.setVerticalGroup(
             workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(workAreaPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblTitle)
-                .addGap(18, 18, 18)
-                .addComponent(lblCurrentCourse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(workAreaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDropClass)
-                    .addComponent(btnJoinClass))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnViewDetail)
-                .addGap(83, 83, 83)
-                .addComponent(lblCourseHistory)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnViewDetail1)
-                .addContainerGap(32, Short.MAX_VALUE))
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         SplitPane.setRightComponent(workAreaPanel);
@@ -247,8 +107,10 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
 
     private void btnShowCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowCourseActionPerformed
         // TODO add your handling code here:
-        CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
-        cardlayout.show(this.getParent(),"studentDashboard");
+        //CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
+        //cardlayout.show(this.getParent(),"studentDashboard");
+        StudentCourseJPanel studentCourseJPanel=new StudentCourseJPanel(SplitPane);
+        SplitPane.setRightComponent(studentCourseJPanel);
     }//GEN-LAST:event_btnShowCourseActionPerformed
 
     private void btnShowProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowProfileActionPerformed
@@ -263,30 +125,13 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
         cardlayout.show(this.getParent(),"studentSignIn");
     }//GEN-LAST:event_btnSignOutActionPerformed
 
-    private void btnJoinClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinClassActionPerformed
-        // TODO add your handling code here:
-        StudentCourseRegisterJPanel studentCourseRegisterJPanel=new StudentCourseRegisterJPanel();
-        SplitPane.setRightComponent(studentCourseRegisterJPanel);
-    }//GEN-LAST:event_btnJoinClassActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSplitPane SplitPane;
-    private javax.swing.JButton btnDropClass;
-    private javax.swing.JButton btnJoinClass;
     private javax.swing.JButton btnShowCourse;
     private javax.swing.JButton btnShowProfile;
     private javax.swing.JButton btnSignOut;
-    private javax.swing.JButton btnViewDetail;
-    private javax.swing.JButton btnViewDetail1;
     private javax.swing.JPanel controlPanel;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblCourseHistory;
-    private javax.swing.JLabel lblCurrentCourse;
-    private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblCourseHistory;
-    private javax.swing.JTable tblCurrentCourse;
     private javax.swing.JPanel workAreaPanel;
     // End of variables declaration//GEN-END:variables
 }
