@@ -152,7 +152,7 @@ public class ProfessorSignUpJPanel extends javax.swing.JPanel {
         if(txtPassword.getText().equals(txtConfirmPassword.getText())){
             Professor p=new Professor(txtUsername.getText(),txtPassword.getText());//create new professor
             admin.addProfessor(p);
-            ProfessorDashboardJPanel professorDashboardJPanel=new ProfessorDashboardJPanel();
+            ProfessorDashboardJPanel professorDashboardJPanel=new ProfessorDashboardJPanel(p,admin);
             this.getParent().add(professorDashboardJPanel,"professorDashboard");
             CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
             cardlayout.show(this.getParent(),"professorDashboard");

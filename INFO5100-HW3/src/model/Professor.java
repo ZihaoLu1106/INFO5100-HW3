@@ -19,10 +19,13 @@ public class Professor extends Person {
     private String pUsername;
     private String pPassword;
     private List<Course>courseList;
+    private List<Course>courseHistory;
+    private String topic;
 
     public Professor() {
         rank=new ArrayList<>();
         courseList=new ArrayList<>();
+        courseHistory=new ArrayList<>();
     }
 
     public Professor(String pUsername, String pPassword) {
@@ -30,6 +33,23 @@ public class Professor extends Person {
         this.pPassword = pPassword;
         rank=new ArrayList<>();
         courseList=new ArrayList<>();
+        courseHistory=new ArrayList<>();
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public List<Course> getCourseHistory() {
+        return courseHistory;
+    }
+
+    public void setCourseHistory(List<Course> courseHistory) {
+        this.courseHistory = courseHistory;
     }
     
 
@@ -137,5 +157,9 @@ public class Professor extends Person {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
+   @Override
+   public String toString(){
+       return name;
+   }
     
 }

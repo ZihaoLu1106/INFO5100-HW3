@@ -23,6 +23,13 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="418" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="240" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="lblCourseName" min="-2" pref="100" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtCourseName" min="-2" pref="139" max="-2" attributes="0"/>
@@ -35,72 +42,6 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtCourseCata" min="-2" pref="151" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cboxFall" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbox2023" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cboxMonday" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="cboxTuesday" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                      <Component id="cboxWednesday" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="cboxThursday" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cboxFriday" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cboxSaturday" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cboxSunday" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="cbox2024" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                              <Component id="cbox2025" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="cboxSpring" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="418" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cboxAm1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cboxAm2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cboxAm3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cboxPm1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cboxPm2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cboxPm3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -108,6 +49,45 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="Save" min="-2" pref="116" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="371" pref="371" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="boxYear" min="-2" max="-2" attributes="0"/>
+                                  <Component id="boxSemester" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="boxWeekday" min="-2" max="-2" attributes="0"/>
+                                  <Component id="boxHour" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lblCourseCata1" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtCourseTopic" min="-2" pref="139" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -135,45 +115,32 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxFall" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxSpring" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCourseCata1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="txtCourseTopic" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbox2023" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbox2024" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbox2025" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxMonday" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxTuesday" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxWednesday" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxThursday" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxFriday" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxSaturday" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxSunday" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cboxAm1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cboxAm2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cboxAm3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cboxPm1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cboxPm2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cboxPm3" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="boxSemester" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="boxWeekday" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="boxYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="boxHour" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="105" max="-2" attributes="0"/>
@@ -240,96 +207,6 @@
         <Property name="text" type="java.lang.String" value="Course Description:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxFall">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fall"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxSpring">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Spring"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cbox2023">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="2023"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cbox2024">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="2024"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cbox2025">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="2025"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxMonday">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Monday"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxTuesday">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Tuesday"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxWednesday">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Wednesday"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxThursday">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Thursday"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxFriday">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Friday"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxSaturday">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Saturday"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxSunday">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sunday"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxAm1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="0000-0300"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxAm2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="0400-0700"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxAm3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="0800-1100"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxPm1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1200-1500"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxPm2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1600-1900"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="cboxPm3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="2000-2300"/>
-      </Properties>
-    </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -353,14 +230,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="boxSemester">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Fall"/>
+            <StringItem index="1" value="Spring"/>
           </StringArray>
         </Property>
       </Properties>
@@ -368,7 +243,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="boxYear">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -382,6 +257,49 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="boxWeekday">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="7">
+            <StringItem index="0" value="Monday"/>
+            <StringItem index="1" value="Tuesday"/>
+            <StringItem index="2" value="Wednesday"/>
+            <StringItem index="3" value="Thursday"/>
+            <StringItem index="4" value="Friday"/>
+            <StringItem index="5" value="Saturday"/>
+            <StringItem index="6" value="Sunday"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="boxHour">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="7">
+            <StringItem index="0" value="00:00-03:00"/>
+            <StringItem index="1" value="04:00-07:00"/>
+            <StringItem index="2" value="08:00-11:00"/>
+            <StringItem index="3" value="12:00-15:00"/>
+            <StringItem index="4" value="16:00-19:00"/>
+            <StringItem index="5" value="20:00-23:00"/>
+            <StringItem index="6" value=" "/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCourseCata1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Course Topic:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtCourseTopic">
     </Component>
   </SubComponents>
 </Form>

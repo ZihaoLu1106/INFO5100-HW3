@@ -21,12 +21,11 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
      */
     Admin admin;
     Course course;
-    Course allCourse;
+   
     Student student;
     public StudentViewClassJPanel(Course course, Admin admin, Student student) {
         initComponents();
         this.admin=admin;
-        this.allCourse=allCourse;
         this.student=student;
         populateTable();
         displayProduct();

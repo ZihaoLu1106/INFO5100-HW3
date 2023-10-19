@@ -40,7 +40,8 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         this.student=student;
         this.professor=professor;
         this.course=course;
-
+        populateCurrentCourseTable();
+        populateCurrentHistoryTable();
     }
 
     /**
@@ -113,17 +114,17 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         tblAllProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Course Code", "Professor", "Semester", "Weekday", "Hour", "Capacity", "Grade"
+                "Professor", "Course", "Region", "Language", "Topic", "Ranking"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -131,6 +132,14 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(tblAllProfessor);
+        if (tblAllProfessor.getColumnModel().getColumnCount() > 0) {
+            tblAllProfessor.getColumnModel().getColumn(0).setResizable(false);
+            tblAllProfessor.getColumnModel().getColumn(1).setResizable(false);
+            tblAllProfessor.getColumnModel().getColumn(2).setResizable(false);
+            tblAllProfessor.getColumnModel().getColumn(3).setResizable(false);
+            tblAllProfessor.getColumnModel().getColumn(4).setResizable(false);
+            tblAllProfessor.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         btnJoinClass.setText("Join Class");
         btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
@@ -194,46 +203,6 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addGap(6, 6, 6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTitle)
-                                    .addComponent(lblCurrentCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblCatelog)
-                                    .addGap(4, 4, 4)
-                                    .addComponent(txtccode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnSearchCourse)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnJoinClass, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(4, 4, 4)
-                                .addComponent(txtProfName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3)
-                                .addGap(4, 4, 4)
-                                .addComponent(txtRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4)
-                                .addGap(4, 4, 4)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)
-                                .addGap(4, 4, 4)
-                                .addComponent(txtTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(15, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,6 +212,42 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnSearchProfessor)
                         .addGap(37, 37, 37))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCurrentCourse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCatelog)
+                                .addGap(4, 4, 4)
+                                .addComponent(txtccode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSearchCourse)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnJoinClass, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(4, 4, 4)
+                            .addComponent(txtProfName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel3)
+                            .addGap(4, 4, 4)
+                            .addComponent(txtRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel4)
+                            .addGap(4, 4, 4)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel5)
+                            .addGap(4, 4, 4)
+                            .addComponent(txtTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,9 +268,9 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                 .addComponent(btnViewDetail)
                 .addGap(21, 21, 21)
                 .addComponent(lblCourseHistory)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtProfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
@@ -309,7 +314,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
     private void btnSearchCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCourseActionPerformed
         // TODO add your handling code here:
-        Course code=professor.CourseList.getcCode.getText());
+        Course code=admin.getCourse(txtccode.getText());
         //        Account result=accountDirectory.searchAccount(txtAccountNumber.getText());
          if(code==null){
             JOptionPane.showMessageDialog(null, "Account number you entered does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
@@ -349,16 +354,16 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         DefaultTableModel model=(DefaultTableModel)tblAllCourse.getModel();
         model.setRowCount(0);
         
-        for(Course course : professor.getCourseList()){
-            Object[]row =new Object[8];
-            row[0]=course;
-            row[1]=course.getProfessorName();
-            row[2]=course.getcCode();
-            row[3]=course.getSemester();
-            row[4]=course.getWeekdays();
-            row[5]=course.getHour();
-            row[6]=10;
-            row[7]=8;
+        for(Course course : admin.getAllCourse()){
+            Object[]row =new Object[7];
+            
+            row[0]=course.getProfessorName();
+            row[1]=course;
+            row[2]=course.getSemester();
+            row[3]=course.getWeekdays();
+            row[4]=course.getHours();
+            row[5]=10;
+            row[6]=course.getStudentList().size();
             model.addRow(row);
         }
     }
@@ -366,16 +371,14 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         DefaultTableModel model=(DefaultTableModel)tblAllProfessor.getModel();
         model.setRowCount(0);
         
-        for(Course course : professor.getCourseList()){
-            Object[]row =new Object[8];
-            row[0]=course;
-            row[1]=course.getcCode();
-            row[2]=course.getProfessorName();
-            row[3]=course.getSemester();
-            row[4]=course.getWeekdays();
-            row[5]=course.getHour();
-            row[6]=10;
-            row[7]=course.getGrade().get(student);
+        for(Professor p : admin.getAllProfessor()){
+            Object[]row =new Object[6];
+            row[0]=p;
+            row[1]=p.getCourseList().toString();
+            row[2]=p.getRegion();
+            row[3]=p.getLanguage();
+            row[4]=p.getTopic();
+            row[5]=p.getRank();
             model.addRow(row);
         }
     }

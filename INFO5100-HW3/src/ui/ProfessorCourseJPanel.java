@@ -7,6 +7,8 @@ import model.Course;
 import model.Admin;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+import javax.swing.table.DefaultTableModel;
+import model.Professor;
 
 /**
  *
@@ -18,13 +20,16 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
      * Creates new form ProfessorCourseJPanel
      */
     JSplitPane splitPane;
-    Course course;
     Admin admin;
-    public ProfessorCourseJPanel(JSplitPane splitPane, Course course, Admin admin) {
+    Professor professor;
+    public ProfessorCourseJPanel(JSplitPane splitPane,  Admin admin,Professor professor) {
         initComponents();
         this.splitPane=splitPane;
-        this.course = course;
         this.admin = admin;
+        this.professor=professor;
+        
+        populateCurrentCourseTable();
+        populateCourseHistoryTable();
     }
 
     /**
@@ -43,7 +48,7 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
         btnAddClass = new javax.swing.JButton();
         btnViewClass = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCourseHistory = new javax.swing.JTable();
         lblCourse1 = new javax.swing.JLabel();
 
         lblCourse.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -92,7 +97,7 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCourseHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -113,12 +118,12 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane2.setViewportView(tblCourseHistory);
+        if (tblCourseHistory.getColumnModel().getColumnCount() > 0) {
+            tblCourseHistory.getColumnModel().getColumn(0).setResizable(false);
+            tblCourseHistory.getColumnModel().getColumn(1).setResizable(false);
+            tblCourseHistory.getColumnModel().getColumn(2).setResizable(false);
+            tblCourseHistory.getColumnModel().getColumn(3).setResizable(false);
         }
 
         lblCourse1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -170,7 +175,7 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
 
     private void btnAddClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClassActionPerformed
         // TODO add your handling code here:
-        ProfessorAddJPanel professorAddJPanel=new ProfessorAddJPanel(course, admin);
+        ProfessorAddJPanel professorAddJPanel=new ProfessorAddJPanel(splitPane,admin,professor);
         splitPane.setRightComponent(professorAddJPanel);
     }//GEN-LAST:event_btnAddClassActionPerformed
 
@@ -187,9 +192,40 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnViewClass;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblCourse;
     private javax.swing.JLabel lblCourse1;
+    private javax.swing.JTable tblCourseHistory;
     private javax.swing.JTable tblProfessorCourse;
     // End of variables declaration//GEN-END:variables
+private void populateCurrentCourseTable() {
+        DefaultTableModel model=(DefaultTableModel)tblProfessorCourse.getModel();
+        model.setRowCount(0);
+        
+        for(Course course : professor.getCourseList()){
+            Object[]row =new Object[6];
+            row[0]=course;
+            row[1]=course.getSemester();
+            row[2]=course.getWeekdays().toString();
+            row[3]=course.getHours();
+            row[4]=10;
+            row[5]=course.getStudentList().size();
+            model.addRow(row);
+        }
+    }
+    private void populateCourseHistoryTable() {
+        DefaultTableModel model=(DefaultTableModel)tblCourseHistory.getModel();
+        model.setRowCount(0);
+        
+        for(Course course : professor.getCourseHistory()){
+            Object[]row =new Object[7];
+            row[0]=course;
+            row[1]=course.getProfessorName();
+            row[2]=course.getSemester();
+            row[3]=course.getWeekdays().toString();
+            row[4]=course.getHours();
+            row[5]=10;
+            
+            model.addRow(row);
+        }
+    }
 }

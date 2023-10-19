@@ -247,7 +247,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
             row[0]=course;
             row[1]=course.getSemester();
             row[2]=course.getWeekdays().toString();
-            row[3]=course.getHour();
+            row[3]=course.getHours();
             row[4]=10;
             row[5]=course.getStudentList().size();
             row[6]=course.getGrade().get(student);
@@ -265,7 +265,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
             row[1]=course.getProfessorName();
             row[2]=course.getSemester();
             row[3]=course.getWeekdays().toString();
-            row[4]=course.getHour();
+            row[4]=course.getHours();
             row[5]=10;
             row[6]=course.getGrade().get(student);
             model.addRow(row);

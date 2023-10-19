@@ -4,6 +4,8 @@
  */
 package ui;
 
+import model.Professor;
+
 /**
  *
  * @author xsyyy
@@ -13,8 +15,10 @@ public class ProfessorProfileJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProfessorProfileJPanel
      */
-    public ProfessorProfileJPanel() {
+    Professor professor;
+    public ProfessorProfileJPanel(Professor professor) {
         initComponents();
+        this.professor=professor;
     }
 
     /**

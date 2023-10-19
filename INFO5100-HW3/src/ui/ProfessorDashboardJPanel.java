@@ -6,6 +6,7 @@ package ui;
 import java.awt.CardLayout;
 import model.Course;
 import model.Admin;
+import model.Professor;
 /**
  *
  * @author JANFAN
@@ -15,10 +16,13 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProfessorDashboardJPanel
      */
-    Course course;
+    
     Admin admin;
-    public ProfessorDashboardJPanel() {
+    Professor professor;
+    public ProfessorDashboardJPanel(Professor professor,Admin admin) {
         initComponents();
+        this.professor=professor;
+        this.admin=admin;
     }
 
     /**
@@ -34,6 +38,7 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
         controlArea = new javax.swing.JPanel();
         btnCourse = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
+        btnSignOut = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         btnCourse.setText("Course");
@@ -50,12 +55,22 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnSignOut.setText("Sign out");
+        btnSignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlAreaLayout = new javax.swing.GroupLayout(controlArea);
         controlArea.setLayout(controlAreaLayout);
         controlAreaLayout.setHorizontalGroup(
             controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnProfile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(controlAreaLayout.createSequentialGroup()
+                .addComponent(btnSignOut)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         controlAreaLayout.setVerticalGroup(
             controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,7 +79,9 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
                 .addComponent(btnCourse)
                 .addGap(67, 67, 67)
                 .addComponent(btnProfile)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
+                .addComponent(btnSignOut)
+                .addGap(82, 82, 82))
         );
 
         splitPane.setLeftComponent(controlArea);
@@ -88,20 +105,27 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
 
     private void btnCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseActionPerformed
         // TODO add your handling code here:
-        ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel(splitPane, course, admin);
+        ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel(splitPane, admin,professor);
         splitPane.setRightComponent(professorCourseJPanel);
     }//GEN-LAST:event_btnCourseActionPerformed
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
         // TODO add your handling code here:
-        ProfessorProfileJPanel professorProfileJPanel=new ProfessorProfileJPanel();
+        ProfessorProfileJPanel professorProfileJPanel=new ProfessorProfileJPanel(professor);
         splitPane.setRightComponent(professorProfileJPanel);
     }//GEN-LAST:event_btnProfileActionPerformed
+
+    private void btnSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignOutActionPerformed
+        // TODO add your handling code here:
+        CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
+        cardlayout.show(this.getParent(),"professorSignIn");
+    }//GEN-LAST:event_btnSignOutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCourse;
     private javax.swing.JButton btnProfile;
+    private javax.swing.JButton btnSignOut;
     private javax.swing.JPanel controlArea;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel workArea;

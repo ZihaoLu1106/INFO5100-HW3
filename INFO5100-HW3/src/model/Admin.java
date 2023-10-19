@@ -15,6 +15,10 @@ public class Admin {
     private List<Student>allStudent;
     private List<Professor>allProfessor;
     private List<Course>allCourse;
+    
+
+
+
 
     public Admin() {
         allStudent=new ArrayList<>();
@@ -43,6 +47,41 @@ public class Admin {
         }
         return null;
     }
+    public void addCourse(Course c){
+        allCourse.add(c);
+    }
+    public Course getCourse(String code){
+        for(Course c:allCourse){
+            if(c.getcCode().equals(code))
+                return c;
+        }
+        return null;
+    }
+
+    public List<Student> getAllStudent() {
+        return allStudent;
+    }
+
+    public void setAllStudent(List<Student> allStudent) {
+        this.allStudent = allStudent;
+    }
+
+    public List<Professor> getAllProfessor() {
+        return allProfessor;
+    }
+
+    public void setAllProfessor(List<Professor> allProfessor) {
+        this.allProfessor = allProfessor;
+    }
+
+    public List<Course> getAllCourse() {
+        return allCourse;
+    }
+
+    public void setAllCourse(List<Course> allCourse) {
+        this.allCourse = allCourse;
+    }
+    
 
     
     
