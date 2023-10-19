@@ -130,14 +130,57 @@ public class Course {
         this.weekdays = weekdays;
     }
 
+    public String getHour() {
+        if(null==hours){
+            return "20:00-23:00";
+        }else switch (hours) {
+            case am1:
+                return "00:00-3:00";
+            case am2:
+                return "4:00-7:00";
+            case am3:
+                return "8:00-11:00";
+            case pm1:
+                return "12:00-15:00";
+            case pm2:
+                return "16:00-19:00";
+            default:
+                return "20:00-23:00";
+        }
+        
+    }
+
     public HOUR getHours() {
         return hours;
+    }
+    
+    
+    public String getSemester(){
+        if(isFall){
+            return "Fall"+years.toString();
+        }else
+            return "Spring"+years.toString();
     }
 
     public void setHours(HOUR hours) {
         this.hours = hours;
     }
-
+    
+    public String getYear(){
+        if(null==years){
+            return "2023";
+        }else switch (years) {
+            case Y2023:
+                return "2023";
+            case Y2024:
+                return "2024";
+            case Y2025:
+                return "2025";
+            default:
+                return "2023";
+        }
+    }
+    
     public YEAR getYears() {
         return years;
     }
@@ -145,8 +188,9 @@ public class Course {
     public void setYears(YEAR years) {
         this.years = years;
     }
-
-
+    @Override
+    public String toString(){
+    return cCode;}
     
     
 }
