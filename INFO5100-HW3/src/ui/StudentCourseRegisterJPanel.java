@@ -325,7 +325,19 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         DefaultTableModel model=(DefaultTableModel)tblAllCourse.getModel();
         Course selectedcourse=(Course)model.getValueAt(selectedRowIndex,0);
         //the class needs to add into student currentlist can student will be add into course's student list
+        //check if student have this class
         
+        for(Course course:student.getCurrentCourses()){
+            if(course.getcCode().equals(selectedcourse.getcCode())){
+                JOptionPane.showMessageDialog(this,"You have chosed same class");
+                return;
+            }
+        }
+        if(student.getCurrentCourses().size()>=2){
+            JOptionPane.showMessageDialog(this,"You have reached max class");
+                return;
+        }
+        //
         if(selectedcourse.getStudentList().size()<10){
             selectedcourse.getStudentList().add(student);
             student.getCurrentCourses().add(selectedcourse);
