@@ -4,6 +4,8 @@
  */
 package ui;
 import java.awt.CardLayout;
+import model.Admin;
+import model.Student;
 /**
  *
  * @author JANFAN
@@ -13,8 +15,13 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
     /**
      * Creates new form StudentDashboardJPanel
      */
-    public StudentDashboardJPanel() {
+    Student student;
+    Admin admin;
+    public StudentDashboardJPanel(Admin admin, Student student) {
         initComponents();
+        this.admin=admin;
+        this.student=student;
+        
     }
 
     /**
@@ -109,13 +116,13 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         //CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
         //cardlayout.show(this.getParent(),"studentDashboard");
-        StudentCourseJPanel studentCourseJPanel=new StudentCourseJPanel(SplitPane);
+        StudentCourseJPanel studentCourseJPanel=new StudentCourseJPanel(SplitPane,admin,student);
         SplitPane.setRightComponent(studentCourseJPanel);
     }//GEN-LAST:event_btnShowCourseActionPerformed
 
     private void btnShowProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowProfileActionPerformed
         // TODO add your handling code here:
-        StudentProfileJPanel studentProfileJPanel=new StudentProfileJPanel();
+        StudentProfileJPanel studentProfileJPanel=new StudentProfileJPanel(student);
         SplitPane.setRightComponent(studentProfileJPanel);
     }//GEN-LAST:event_btnShowProfileActionPerformed
 

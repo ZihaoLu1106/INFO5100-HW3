@@ -158,7 +158,7 @@ public class StudentSignInJPanel extends javax.swing.JPanel {
         if(student==null)
             JOptionPane.showMessageDialog(this, "Username or Password not find");
         else{
-            StudentDashboardJPanel studentJPanel=new StudentDashboardJPanel();
+            StudentDashboardJPanel studentJPanel=new StudentDashboardJPanel(admin,student);
             this.getParent().add(studentJPanel,"studentDashboard");
             CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
             cardlayout.show(this.getParent(),"studentDashboard");

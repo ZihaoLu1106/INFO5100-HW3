@@ -4,8 +4,13 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+import javax.swing.table.DefaultTableModel;
+import model.Admin;
+import model.Course;
+import model.Student;
 
 /**
  *
@@ -17,9 +22,15 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
      * Creates new form StudentCourseJPanel
      */
     JSplitPane SplitPane;
-    public StudentCourseJPanel(JSplitPane SplitPane) {
+    Admin admin;
+    Student student;
+    public StudentCourseJPanel(JSplitPane SplitPane,Admin admin,Student student) {
         initComponents();
         this.SplitPane=SplitPane;
+        this.admin=admin;
+        this.student=student;
+        populateCurrentCourseTable();
+        populateCourseHistoryTable();
     }
 
     /**
@@ -70,6 +81,11 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblCurrentCourse);
 
         btnDropClass.setText("Drop Class");
+        btnDropClass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDropClassActionPerformed(evt);
+            }
+        });
 
         btnJoinClass.setText("Join Another Class");
         btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
@@ -115,35 +131,29 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCurrentCourse)
-                                    .addComponent(lblTitle))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 136, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnViewDetail1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnDropClass, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(btnViewDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnJoinClass, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(103, 103, 103))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCourseHistory)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnViewDetail1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnDropClass, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnViewDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnJoinClass, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
-                        .addContainerGap())))
+                            .addComponent(lblCurrentCourse)
+                            .addComponent(lblTitle)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(115, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,13 +170,13 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
                     .addComponent(btnJoinClass))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewDetail)
-                .addGap(83, 83, 83)
+                .addGap(71, 71, 71)
                 .addComponent(lblCourseHistory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(btnViewDetail1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -179,6 +189,40 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
     private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewDetailActionPerformed
+
+    private void btnDropClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDropClassActionPerformed
+        // TODO add your handling code here:
+        // drop class:
+        //1.student delete this class in the current course
+        //2.course delete the student in student list
+        //3.course check waitlist if have student move student to student list;
+        
+        int selectedRowIndex=tblCurrentCourse.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            return;
+        }
+        DefaultTableModel model=(DefaultTableModel)tblCurrentCourse.getModel();
+        Course selectedCourse=(Course)model.getValueAt(selectedRowIndex,0);
+        
+        
+        student.getCurrentCourses().remove(selectedCourse);
+        JOptionPane.showMessageDialog(this,"Course deleted.");
+        
+        populateCurrentCourseTable();
+        
+        //course delete the student in student list
+        selectedCourse.getStudentList().remove(student);
+        //course check waitlist if have student move student to student list;
+        
+        if(!selectedCourse.getWaitList().isEmpty()){
+            Student newStudent=selectedCourse.getWaitList().get(0);
+            selectedCourse.getWaitList().remove(0);
+            selectedCourse.getStudentList().add(newStudent);
+        }
+        
+        
+    }//GEN-LAST:event_btnDropClassActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -194,4 +238,37 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblCourseHistory;
     private javax.swing.JTable tblCurrentCourse;
     // End of variables declaration//GEN-END:variables
+ private void populateCurrentCourseTable() {
+        DefaultTableModel model=(DefaultTableModel)tblCurrentCourse.getModel();
+        model.setRowCount(0);
+        
+        for(Course course : student.getCurrentCourses()){
+            Object[]row =new Object[7];
+            row[0]=course;
+            row[1]=course.getSemester();
+            row[2]=course.getWeekdays().toString();
+            row[3]=course.getHour();
+            row[4]=10;
+            row[5]=course.getStudentList().size();
+            row[6]=course.getGrade().get(student);
+            model.addRow(row);
+        }
+    }
+
+    private void populateCourseHistoryTable() {
+        DefaultTableModel model=(DefaultTableModel)tblCourseHistory.getModel();
+        model.setRowCount(0);
+        
+        for(Course course : student.getCourseHistory()){
+            Object[]row =new Object[7];
+            row[0]=course;
+            row[1]=course.getProfessorName();
+            row[2]=course.getSemester();
+            row[3]=course.getWeekdays().toString();
+            row[4]=course.getHour();
+            row[5]=10;
+            row[6]=course.getGrade().get(student);
+            model.addRow(row);
+        }
+    }
 }
