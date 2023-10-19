@@ -4,7 +4,8 @@
  */
 package ui;
 
-import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
 
 /**
  *
@@ -15,8 +16,10 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProfessorCourseJPanel
      */
-    public ProfessorCourseJPanel() {
+    JSplitPane splitPane;
+    public ProfessorCourseJPanel(JSplitPane splitPane) {
         initComponents();
+        this.splitPane=splitPane;
     }
 
     /**
@@ -32,7 +35,7 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProfessorCourse = new javax.swing.JTable();
         btnDelete = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnAddClass = new javax.swing.JButton();
         btnViewClass = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -70,9 +73,19 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
 
         btnDelete.setText("Delete");
 
-        jButton1.setText("Add Class");
+        btnAddClass.setText("Add Class");
+        btnAddClass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddClassActionPerformed(evt);
+            }
+        });
 
         btnViewClass.setText("View Class");
+        btnViewClass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewClassActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -118,7 +131,7 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
                             .addGap(89, 89, 89)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(110, 110, 110)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddClass, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(106, 106, 106)
                             .addComponent(btnViewClass, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
@@ -140,7 +153,7 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddClass, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnViewClass, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(lblCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,11 +163,23 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAddClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClassActionPerformed
+        // TODO add your handling code here:
+        ProfessorAddJPanel professorAddJPanel=new ProfessorAddJPanel();
+        splitPane.setRightComponent(professorAddJPanel);
+    }//GEN-LAST:event_btnAddClassActionPerformed
+
+    private void btnViewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewClassActionPerformed
+        // TODO add your handling code here:
+        ProfessorViewJPanel professorViewJPanel=new ProfessorViewJPanel();
+        splitPane.setRightComponent(professorViewJPanel);
+    }//GEN-LAST:event_btnViewClassActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddClass;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnViewClass;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

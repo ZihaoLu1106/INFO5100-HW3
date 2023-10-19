@@ -24,7 +24,7 @@
                           <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                           <Component id="btnDelete" min="-2" pref="127" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="127" max="-2" attributes="0"/>
+                          <Component id="btnAddClass" min="-2" pref="127" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                           <Component id="btnViewClass" min="-2" pref="127" max="-2" attributes="0"/>
                       </Group>
@@ -54,7 +54,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnDelete" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="btnAddClass" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="btnViewClass" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="63" max="32767" attributes="0"/>
@@ -140,15 +140,21 @@
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnAddClass">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add Class"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddClassActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnViewClass">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Class"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewClassActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
