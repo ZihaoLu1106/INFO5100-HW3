@@ -26,41 +26,80 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnBack = new javax.swing.JButton();
+        splitPane = new javax.swing.JSplitPane();
+        controlArea = new javax.swing.JPanel();
+        btnCourse = new javax.swing.JButton();
+        btnProfile = new javax.swing.JButton();
+        workArea = new javax.swing.JPanel();
 
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        btnCourse.setText("Course");
+        btnCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                btnCourseActionPerformed(evt);
             }
         });
+
+        btnProfile.setText("Profile");
+        btnProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfileActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout controlAreaLayout = new javax.swing.GroupLayout(controlArea);
+        controlArea.setLayout(controlAreaLayout);
+        controlAreaLayout.setHorizontalGroup(
+            controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnProfile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        controlAreaLayout.setVerticalGroup(
+            controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlAreaLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(btnCourse)
+                .addGap(67, 67, 67)
+                .addComponent(btnProfile)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        splitPane.setLeftComponent(controlArea);
+
+        workArea.setLayout(new java.awt.CardLayout());
+        splitPane.setRightComponent(workArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(btnBack)
-                .addContainerGap(712, Short.MAX_VALUE))
+                .addComponent(splitPane, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnBack)
-                .addContainerGap(557, Short.MAX_VALUE))
+            .addComponent(splitPane)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void btnCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseActionPerformed
         // TODO add your handling code here:
-        CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
-        cardlayout.show(this.getParent(),"professorSignIn");
-    }//GEN-LAST:event_btnBackActionPerformed
+        ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel();
+        splitPane.setRightComponent(professorCourseJPanel);
+    }//GEN-LAST:event_btnCourseActionPerformed
+
+    private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
+        // TODO add your handling code here:
+        ProfessorProfileJPanel professorProfileJPanel=new ProfessorProfileJPanel();
+        splitPane.setRightComponent(professorProfileJPanel);
+    }//GEN-LAST:event_btnProfileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCourse;
+    private javax.swing.JButton btnProfile;
+    private javax.swing.JPanel controlArea;
+    private javax.swing.JSplitPane splitPane;
+    private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
 }
