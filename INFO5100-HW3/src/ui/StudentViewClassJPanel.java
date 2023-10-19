@@ -5,7 +5,10 @@
 package ui;
 
 import java.awt.CardLayout;
+import javax.swing.table.DefaultTableModel;
+import model.Admin;
 import model.Course;
+import model.Student;
 
 /**
  *
@@ -16,12 +19,18 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
     /**
      * Creates new form StudentViewClassJPanel
      */
+    Admin admin;
     Course course;
-    public StudentViewClassJPanel(Course course) {
+    Course allCourse;
+    Student studentList;
+    public StudentViewClassJPanel(Course course, Admin admin, Student student) {
         initComponents();
-         displayProduct();
+        admin=admin;
+        this.allCourse=allCourse;
+        this.studentList=studentList;
+        populateTable();
+        displayProduct();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,72 +41,31 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         StudentViewClassJPanel = new javax.swing.JPanel();
-        lblCourseDetail = new javax.swing.JLabel();
         lblCourseName = new javax.swing.JLabel();
-        lblSemester = new javax.swing.JLabel();
-        lblCourseDesc = new javax.swing.JLabel();
-        lblCourseCode = new javax.swing.JLabel();
-        lblWeekDay = new javax.swing.JLabel();
-        lblCourseCatalog = new javax.swing.JLabel();
-        lblHour = new javax.swing.JLabel();
-        btnBack = new javax.swing.JButton();
-        txtcName = new javax.swing.JTextField();
-        txtSemester = new javax.swing.JTextField();
-        txtcCode = new javax.swing.JTextField();
         txtcWeekDay = new javax.swing.JTextField();
+        lblSemester = new javax.swing.JLabel();
         txtcTopic = new javax.swing.JTextField();
+        lblCourseDesc = new javax.swing.JLabel();
         txtcHour = new javax.swing.JTextField();
+        lblCourseCode = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblWaitlist = new javax.swing.JTable();
+        lblWeekDay = new javax.swing.JLabel();
+        lblCourseCatalog = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblCourseDesc = new javax.swing.JTable();
+        tblCStu = new javax.swing.JTable();
+        lblHour = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
         lblWatilist = new javax.swing.JLabel();
+        txtcName = new javax.swing.JTextField();
         txtcYear = new javax.swing.JTextField();
+        txtSemester = new javax.swing.JTextField();
         lblYear = new javax.swing.JLabel();
+        lblCourseDetail = new javax.swing.JLabel();
+        txtcCode = new javax.swing.JTextField();
         txtcDescription = new javax.swing.JTextField();
 
-        setLayout(new java.awt.CardLayout());
-
-        lblCourseDetail.setText("Course Detail");
-
         lblCourseName.setText("Course Name:");
-
-        lblSemester.setText("Semester:");
-
-        lblCourseDesc.setText("Course Description:");
-
-        lblCourseCode.setText("Course Code:");
-
-        lblWeekDay.setText("WeekDay:");
-
-        lblCourseCatalog.setText("Course Catalog:");
-
-        lblHour.setText("Hour:");
-
-        btnBack.setText("<< Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
-        txtcName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcNameActionPerformed(evt);
-            }
-        });
-
-        txtSemester.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSemesterActionPerformed(evt);
-            }
-        });
-
-        txtcCode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcCodeActionPerformed(evt);
-            }
-        });
 
         txtcWeekDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,17 +73,23 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblSemester.setText("Semester:");
+
         txtcTopic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcTopicActionPerformed(evt);
             }
         });
 
+        lblCourseDesc.setText("Course Description:");
+
         txtcHour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcHourActionPerformed(evt);
             }
         });
+
+        lblCourseCode.setText("Course Code:");
 
         tblWaitlist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -138,7 +112,11 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblWaitlist);
 
-        tblCourseDesc.setModel(new javax.swing.table.DefaultTableModel(
+        lblWeekDay.setText("WeekDay:");
+
+        lblCourseCatalog.setText("Course Catalog:");
+
+        tblCStu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -157,9 +135,24 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblCourseDesc);
+        jScrollPane2.setViewportView(tblCStu);
+
+        lblHour.setText("Hour:");
+
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         lblWatilist.setText("Waitlist:");
+
+        txtcName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcNameActionPerformed(evt);
+            }
+        });
 
         txtcYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +160,21 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtSemester.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSemesterActionPerformed(evt);
+            }
+        });
+
         lblYear.setText("Year:");
+
+        lblCourseDetail.setText("Course Detail");
+
+        txtcCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcCodeActionPerformed(evt);
+            }
+        });
 
         txtcDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,66 +187,65 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         StudentViewClassJPanelLayout.setHorizontalGroup(
             StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(lblCourseDetail)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSemester)
-                    .addComponent(lblCourseName)
-                    .addComponent(lblCourseDesc))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                .addComponent(txtcName, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblCourseCode))
-                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                .addComponent(txtSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblYear)))
-                        .addGap(18, 18, 18)
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtcYear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcCode, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
+                        .addGap(53, 53, 53)
+                        .addComponent(lblWatilist)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(lblCourseDetail))
+                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
                         .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCourseCatalog)
-                            .addComponent(lblWeekDay))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtcTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBack)
                             .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblHour)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(64, 64, 64))
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentViewClassJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblWatilist)
-                .addGap(80, 80, 80)
-                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnBack)))
-                .addGap(34, 34, 34))
+                                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblSemester)
+                                    .addComponent(lblCourseName)
+                                    .addComponent(lblCourseDesc))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                        .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(79, 79, 79)
+                                        .addComponent(lblHour)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                                .addComponent(txtcName, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(lblCourseCode))
+                                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                                .addComponent(txtSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lblYear)))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtcYear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtcCode, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(42, 42, 42)
+                                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblCourseCatalog)
+                                    .addComponent(lblWeekDay))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtcTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         StudentViewClassJPanelLayout.setVerticalGroup(
             StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(lblCourseDetail)
-                .addGap(60, 60, 60)
+                .addGap(18, 18, 18)
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCourseName)
                     .addComponent(lblCourseCode)
@@ -251,41 +257,38 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSemester)
                     .addComponent(lblWeekDay)
-                    .addComponent(lblHour)
                     .addComponent(txtSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblYear)
                     .addComponent(txtcYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCourseDesc)
-                    .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                    .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHour)
+                    .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnBack, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWatilist))
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18)
+                .addComponent(btnBack)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
-        add(StudentViewClassJPanel, "card2");
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(StudentViewClassJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(StudentViewClassJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtcNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcNameActionPerformed
-
-    private void txtSemesterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSemesterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSemesterActionPerformed
-
-    private void txtcCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcCodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcCodeActionPerformed
 
     private void txtcWeekDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcWeekDayActionPerformed
         // TODO add your handling code here:
@@ -307,9 +310,21 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         cardlayout.show(this.getParent(), "StudentAddcourseJPanel");
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void txtcNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcNameActionPerformed
+
     private void txtcYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcYearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcYearActionPerformed
+
+    private void txtSemesterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSemesterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSemesterActionPerformed
+
+    private void txtcCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcCodeActionPerformed
 
     private void txtcDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcDescriptionActionPerformed
         // TODO add your handling code here:
@@ -331,7 +346,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblWatilist;
     private javax.swing.JLabel lblWeekDay;
     private javax.swing.JLabel lblYear;
-    private javax.swing.JTable tblCourseDesc;
+    private javax.swing.JTable tblCStu;
     private javax.swing.JTable tblWaitlist;
     private javax.swing.JTextField txtSemester;
     private javax.swing.JTextField txtcCode;
@@ -350,5 +365,27 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
        txtcTopic.setText(course.getcTopic());  
        txtcHour.setText(course.getHours().toString());    
        txtcYear.setText(course.getYears().toString());
+    }
+    private void populateTable() {
+             DefaultTableModel model1 = (DefaultTableModel) tblCStu.getModel();
+             model1.setRowCount(0);
+             for(Student student: course.getStudentList()){
+               Object [] row = new Object[3];
+               row[0] = student;
+               row[1] = student.getName();
+               row[2] = student.getStudentID();
+               model1.addRow(row);
+             }    
+               
+               
+             DefaultTableModel model2 = (DefaultTableModel) tblWaitlist.getModel();
+             model2.setRowCount(0);
+             for(Student student: course.getStudentList()){
+               Object [] row = new Object[3];
+               row[0] = student;
+               row[1] = student.getName();
+               row[2] = student.getStudentID();
+               model2.addRow(row);
+               }
     }
 }
