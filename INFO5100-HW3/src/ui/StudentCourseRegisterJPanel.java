@@ -332,6 +332,10 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this,"You have chosed same class");
                 return;
             }
+            if(course.getTime().equals(selectedcourse.getTime())){
+                JOptionPane.showMessageDialog(this,"Time conflict");
+                return;
+            }
         }
         if(student.getCurrentCourses().size()>=2){
             JOptionPane.showMessageDialog(this,"You have reached max class");
