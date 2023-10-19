@@ -26,7 +26,6 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         this.admin = admin;
         this.professor=professor;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
