@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
-
+import model.Course;
+import model.Admin;
 /**
  *
  * @author xsyyy
@@ -13,8 +14,12 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProfessorAddJPanel
      */
-    public ProfessorAddJPanel() {
+    Course course;
+    Admin admin;
+    public ProfessorAddJPanel(Course course, Admin admin) {
         initComponents();
+        this.admin = admin;
+        this.course = course;
     }
 
     /**
@@ -59,6 +64,8 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescr = new javax.swing.JTextArea();
         Save = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         lblCourse1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblCourse1.setText("Add Course Detail");
@@ -120,6 +127,16 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(txtDescr);
 
         Save.setText("Save");
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
+        jComboBox2.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -159,11 +176,6 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
                                     .addComponent(cboxMonday))
                                 .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cboxSpring)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cbox2024)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(cbox2025))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(cboxTuesday)
                                         .addGap(19, 19, 19)
@@ -175,7 +187,18 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addComponent(cboxSaturday)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cboxSunday))))
+                                        .addComponent(cboxSunday))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(cbox2024)
+                                                .addGap(36, 36, 36)
+                                                .addComponent(cbox2025))
+                                            .addComponent(cboxSpring))
+                                        .addGap(79, 79, 79)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cboxAm1)
@@ -192,7 +215,7 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107))
         );
@@ -214,18 +237,20 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblCourseCata, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtCourseCata, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(33, 33, 33)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(cboxFall)
-                    .addComponent(cboxSpring))
-                .addGap(24, 24, 24)
+                    .addComponent(cboxSpring)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(cbox2023)
                     .addComponent(cbox2024)
-                    .addComponent(cbox2025))
-                .addGap(40, 40, 40)
+                    .addComponent(cbox2025)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cboxMonday)
@@ -255,6 +280,20 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        // TODO add your handling code here:
+        String cName = txtCourseName.getText();
+        String cCode = txtCourseCode.getText();
+        String cCata = txtCourseCata.getText();
+        if(cboxFall.isSelected()){
+            //when the term is fall
+            boolean isFall = true;
+            
+        }else{
+            
+        }
+    }//GEN-LAST:event_SaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Save;
@@ -276,6 +315,8 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox cboxThursday;
     private javax.swing.JCheckBox cboxTuesday;
     private javax.swing.JCheckBox cboxWednesday;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

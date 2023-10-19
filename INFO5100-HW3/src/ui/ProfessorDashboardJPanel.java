@@ -4,6 +4,8 @@
  */
 package ui;
 import java.awt.CardLayout;
+import model.Course;
+import model.Admin;
 /**
  *
  * @author JANFAN
@@ -13,6 +15,8 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProfessorDashboardJPanel
      */
+    Course course;
+    Admin admin;
     public ProfessorDashboardJPanel() {
         initComponents();
     }
@@ -84,7 +88,7 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
 
     private void btnCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseActionPerformed
         // TODO add your handling code here:
-        ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel(splitPane);
+        ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel(splitPane, course, admin);
         splitPane.setRightComponent(professorCourseJPanel);
     }//GEN-LAST:event_btnCourseActionPerformed
 

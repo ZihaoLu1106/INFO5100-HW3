@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
-
+import model.Course;
+import model.Admin;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
@@ -17,9 +18,13 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
      * Creates new form ProfessorCourseJPanel
      */
     JSplitPane splitPane;
-    public ProfessorCourseJPanel(JSplitPane splitPane) {
+    Course course;
+    Admin admin;
+    public ProfessorCourseJPanel(JSplitPane splitPane, Course course, Admin admin) {
         initComponents();
         this.splitPane=splitPane;
+        this.course = course;
+        this.admin = admin;
     }
 
     /**
@@ -165,7 +170,7 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
 
     private void btnAddClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClassActionPerformed
         // TODO add your handling code here:
-        ProfessorAddJPanel professorAddJPanel=new ProfessorAddJPanel();
+        ProfessorAddJPanel professorAddJPanel=new ProfessorAddJPanel(course, admin);
         splitPane.setRightComponent(professorAddJPanel);
     }//GEN-LAST:event_btnAddClassActionPerformed
 
