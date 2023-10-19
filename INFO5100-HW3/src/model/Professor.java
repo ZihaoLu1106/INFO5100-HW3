@@ -15,7 +15,8 @@ import javax.swing.ImageIcon;
  */
 public class Professor extends Person {
     private int ProfessorID;
-    private List<Double>rank;
+    private List<Integer>rank;
+    private Double rate;
     private String pUsername;
     private String pPassword;
     private List<Course>courseList;
@@ -34,8 +35,31 @@ public class Professor extends Person {
         rank=new ArrayList<>();
         courseList=new ArrayList<>();
         courseHistory=new ArrayList<>();
+        this.name="Not defined";
+        this.gender="Not defined";
+        this.age=0;
+        this.email="Not defined";
+        this.region="Not defined";
+        this.Language="Not defined";
+        this.image=null;
+        this.birthday=LocalDate.of(2023,1,1);
     }
 
+    public Double getRate() {
+        return rate;
+    }
+
+    public void setRate(Double rate) {
+        this.rate = rate;
+    }
+    
+    public void calRate(){
+        int total=0;
+        for(int i:rank){
+            total+=i;
+        }
+        rate=Double.valueOf(total)/Double.valueOf(rank.size());
+    }
     public String getTopic() {
         return topic;
     }
@@ -62,11 +86,11 @@ public class Professor extends Person {
         this.ProfessorID = ProfessorID;
     }
 
-    public List<Double> getRank() {
+    public List<Integer> getRank() {
         return rank;
     }
 
-    public void setRank(List<Double> rank) {
+    public void setRank(List<Integer> rank) {
         this.rank = rank;
     }
 

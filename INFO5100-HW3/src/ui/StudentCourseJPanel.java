@@ -10,6 +10,7 @@ import javax.swing.JSplitPane;
 import javax.swing.table.DefaultTableModel;
 import model.Admin;
 import model.Course;
+import model.Professor;
 import model.Student;
 
 /**
@@ -52,7 +53,8 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCourseHistory = new javax.swing.JTable();
         lblCourseHistory = new javax.swing.JLabel();
-        btnViewDetail1 = new javax.swing.JButton();
+        btnRateMyProfessor = new javax.swing.JButton();
+        boxRate = new javax.swing.JComboBox<>();
 
         lblTitle.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         lblTitle.setText("Course Management");
@@ -124,7 +126,19 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
         lblCourseHistory.setText("Course History:");
 
-        btnViewDetail1.setText("Rate your professor");
+        btnRateMyProfessor.setText("Rate your professor");
+        btnRateMyProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRateMyProfessorActionPerformed(evt);
+            }
+        });
+
+        boxRate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Defult", "1", "2", "3", "4", "5" }));
+        boxRate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxRateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,15 +151,19 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnViewDetail1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnDropClass, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(btnViewDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnJoinClass, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(btnJoinClass, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnRateMyProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(boxRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(15, 15, 15)))))
                         .addGap(103, 103, 103))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,9 +192,11 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
                 .addComponent(lblCourseHistory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(btnViewDetail1)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRateMyProfessor)
+                    .addComponent(boxRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -225,12 +245,41 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnDropClassActionPerformed
 
+    private void btnRateMyProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRateMyProfessorActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex=tblCourseHistory.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please select a course to rate professor");
+            return;
+        }
+        DefaultTableModel model=(DefaultTableModel)tblCourseHistory.getModel();
+        Course selectedCourse=(Course)model.getValueAt(selectedRowIndex,0);
+        int rate=Integer.parseInt(boxRate.getSelectedItem().toString());
+        String pName=selectedCourse.getProfessorName();
+        
+        for(Professor p:admin.getAllProfessor()){
+            if(p.getName().equals(pName)){
+                p.getRank().add(rate);
+                p.calRate();
+                break;
+            }
+            
+        }
+        
+
+    }//GEN-LAST:event_btnRateMyProfessorActionPerformed
+
+    private void boxRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxRateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxRateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> boxRate;
     private javax.swing.JButton btnDropClass;
     private javax.swing.JButton btnJoinClass;
+    private javax.swing.JButton btnRateMyProfessor;
     private javax.swing.JButton btnViewDetail;
-    private javax.swing.JButton btnViewDetail1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCourseHistory;
