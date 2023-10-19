@@ -182,7 +182,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
     private void btnJoinClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinClassActionPerformed
         // TODO add your handling code here:
-        StudentCourseRegisterJPanel studentCourseRegisterJPanel=new StudentCourseRegisterJPanel(admin,student);
+        StudentCourseRegisterJPanel studentCourseRegisterJPanel=new StudentCourseRegisterJPanel(admin,student,SplitPane);
         SplitPane.setRightComponent(studentCourseRegisterJPanel);
     }//GEN-LAST:event_btnJoinClassActionPerformed
 
@@ -219,6 +219,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
             Student newStudent=selectedCourse.getWaitList().get(0);
             selectedCourse.getWaitList().remove(0);
             selectedCourse.getStudentList().add(newStudent);
+            newStudent.getCurrentCourses().add(selectedCourse);
         }
         
         

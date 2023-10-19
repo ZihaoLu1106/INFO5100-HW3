@@ -5,6 +5,7 @@
 package ui;
 
 import java.awt.CardLayout;
+import javax.swing.JSplitPane;
 import javax.swing.table.DefaultTableModel;
 import model.Admin;
 import model.Course;
@@ -21,12 +22,14 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
      */
     Admin admin;
     Course course;
-   
     Student student;
-    public StudentViewClassJPanel(Course course, Admin admin, Student student) {
+    JSplitPane SplitPane;
+    public StudentViewClassJPanel(Course course, Admin admin, Student student,JSplitPane SplitPane) {
         initComponents();
+        this.course=course;
         this.admin=admin;
         this.student=student;
+        this.SplitPane=SplitPane;
         populateTable();
         displayProduct();
     }
@@ -303,10 +306,9 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        StudentCourseRegisterJPanel studentAddcourseJPanel =new StudentCourseRegisterJPanel(admin,student);
-        this.getParent().add(studentAddcourseJPanel ,"AdminLoading");
-        CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
-        cardlayout.show(this.getParent(), "StudentAddcourseJPanel");
+        
+        StudentCourseJPanel panel=new StudentCourseJPanel(SplitPane,admin,student);
+        SplitPane.setRightComponent(panel);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtcNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcNameActionPerformed
@@ -362,8 +364,8 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
        txtcCode.setText(course.getcCode());
        txtcDescription.setText(course.getcDescription());
        txtcTopic.setText(course.getcTopic());  
-       txtcHour.setText(course.getHours().toString());    
-       txtcYear.setText(course.getYears().toString());
+       txtcHour.setText(course.getHours());    
+       txtcYear.setText(course.getYears());
     }
     private void populateTable() {
              DefaultTableModel model1 = (DefaultTableModel) tblCStu.getModel();
@@ -379,7 +381,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
                
              DefaultTableModel model2 = (DefaultTableModel) tblWaitlist.getModel();
              model2.setRowCount(0);
-             for(Student student: course.getStudentList()){
+             for(Student student: course.getWaitList()){
                Object [] row = new Object[3];
                row[0] = student;
                row[1] = student.getName();

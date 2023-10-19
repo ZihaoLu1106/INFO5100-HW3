@@ -33,7 +33,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
      * Creates new form StudentCourseRegisterJPanel
      */
 
-    public StudentCourseRegisterJPanel(Admin admin,Student student) {
+    public StudentCourseRegisterJPanel(Admin admin,Student student,JSplitPane SplitPane) {
         initComponents();
         this.SplitPane=SplitPane;
         this.admin=admin;
@@ -88,7 +88,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Professor", "Course Code", "Semester", "Weekday", "Hour", "Capacity", "Current student"
+                "Course Code", "Semester", "Professor", "Weekday", "Hour", "Capacity", "Current student"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -149,6 +149,11 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         });
 
         btnViewDetail.setText("View Detail");
+        btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewDetailActionPerformed(evt);
+            }
+        });
 
         txtccode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,8 +313,24 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
     private void btnJoinClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinClassActionPerformed
         // TODO add your handling code here:
-        StudentCourseRegisterJPanel studentCourseRegisterJPanel=new StudentCourseRegisterJPanel(admin,student);
-        SplitPane.setRightComponent(studentCourseRegisterJPanel);
+         int selectedRowIndex=tblAllCourse.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            return;
+        }
+        DefaultTableModel model=(DefaultTableModel)tblAllCourse.getModel();
+        Course selectedcourse=(Course)model.getValueAt(selectedRowIndex,0);
+        //the class needs to add into student currentlist can student will be add into course's student list
+        
+        if(selectedcourse.getStudentList().size()<10){
+            selectedcourse.getStudentList().add(student);
+            student.getCurrentCourses().add(selectedcourse);
+        }else{
+            selectedcourse.getWaitList().add(student);
+        }
+        StudentCourseJPanel panel=new StudentCourseJPanel(SplitPane,admin,student);
+        SplitPane.setRightComponent(panel);
+        
     }//GEN-LAST:event_btnJoinClassActionPerformed
 
     private void btnSearchCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCourseActionPerformed
@@ -324,6 +345,19 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
          }
 
     }//GEN-LAST:event_btnSearchCourseActionPerformed
+
+    private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
+        // TODO add your handling code here:
+         int selectedRowIndex=tblAllCourse.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            return;
+        }
+        DefaultTableModel model=(DefaultTableModel)tblAllCourse.getModel();
+        Course selectedcourse=(Course)model.getValueAt(selectedRowIndex,0);
+        StudentViewClassJPanel panel=new StudentViewClassJPanel(selectedcourse,admin,student,SplitPane);
+        SplitPane.setRightComponent(panel);
+    }//GEN-LAST:event_btnViewDetailActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -356,10 +390,9 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         
         for(Course course : admin.getAllCourse()){
             Object[]row =new Object[7];
-            
-            row[0]=course.getProfessorName();
-            row[1]=course;
-            row[2]=course.getSemester();
+            row[0]=course;
+            row[1]=course.getSemester();
+            row[2]=course.getProfessorName();
             row[3]=course.getWeekdays();
             row[4]=course.getHours();
             row[5]=10;
