@@ -5,7 +5,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -44,19 +46,28 @@ public class Course {
     private boolean isFall;
     private List<Student>waitList;
     private List<Student>studentList;
+    private Map<Student,Character>grade;
     private List<WEEKDAY>weekdays;
     private HOUR hours;
     private YEAR years;
+    
 
     public Course() {
         waitList=new ArrayList<>();
         studentList=new ArrayList<>();
         weekdays=new ArrayList<>();
+        grade=new HashMap<>();
         //hours=new ArrayList<>();
         //years=new ArrayList<>();
     }
-    
-    
+
+    public Map<Student, Character> getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Map<Student, Character> grade) {
+        this.grade = grade;
+    }
 
     public String getProfessorName() {
         return professorName;
