@@ -31,6 +31,8 @@ public class Student extends Person {
         passwordHistory=new ArrayList<>();
         GPA=0.0;
         isGraduate=false;
+        
+        
                 
     }
 
@@ -42,6 +44,15 @@ public class Student extends Person {
         passwordHistory=new ArrayList<>();
         GPA=0.0;
         isGraduate=false;
+        
+        this.name="Not defined";
+        this.gender="Not defined";
+        this.age=0;
+        this.email="Not defined";
+        this.region="Not defined";
+        this.Language="Not defined";
+        this.image=null;
+        this.birthday=LocalDate.of(2023,1,1);
     }
     
     
@@ -175,8 +186,10 @@ public class Student extends Person {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
-
-    
+    @Override
+    public String toString(){
+        return this.name;
+    }
     
     
 }

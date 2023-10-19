@@ -22,6 +22,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         initComponents();
         this.admin=admin;
         this.student=student;
+        
     }
 
     /**

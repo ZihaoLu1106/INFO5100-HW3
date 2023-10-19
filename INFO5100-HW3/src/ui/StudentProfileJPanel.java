@@ -27,6 +27,17 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
     public StudentProfileJPanel(Student student) {
         initComponents();
         this.student=student;
+        txtsname.setText(student.getName());
+        txtgender.setText(student.getGender());
+        txtage.setText(String.valueOf(student.getAge()));
+        txtEmail.setText(student.getEmail());
+        txtregion.setText(student.getRegion());
+        txtlanguage.setText(student.getLanguage());
+        txtbirthday.setText(student.getBirthday().toString());
+        txtstudentID.setText(String.valueOf(student.getStudentID()));
+        txtusername.setText(student.getsUsername());
+        txtGPA.setText(String.valueOf(student.getGPA()));
+        txtGraduate.setText(String.valueOf(student.isIsGraduate()));
         
     }
 
@@ -334,17 +345,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         student.setImage((ImageIcon) lblImage.getIcon());
 
         JOptionPane.showMessageDialog(this, "Your personal information has been updated.");
-        txtsname.setText("");
-        txtgender.setText("");
-        txtage.setText("");
-        txtEmail.setText("");
-        txtregion.setText("");
-        txtlanguage.setText("");
-        txtbirthday.setText("");
-        txtstudentID.setText("");
-        txtusername.setText("");
-        txtGPA.setText("");
-        txtGraduate.setText("");
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
 
