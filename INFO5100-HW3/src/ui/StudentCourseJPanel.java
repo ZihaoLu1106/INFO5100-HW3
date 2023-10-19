@@ -252,7 +252,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
             row[5]=course.getStudentList().size();
             row[6]=course.getGrade().get(student);
             model.addRow(row);
-        }
+        }            
     }
 
     private void populateCourseHistoryTable() {

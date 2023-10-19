@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
+import javax.swing.JOptionPane;
 import model.Course;
 import model.Admin;
 import javax.swing.JPanel;
@@ -82,6 +83,11 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
         }
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnAddClass.setText("Add Class");
         btnAddClass.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +190,26 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
         ProfessorViewJPanel professorViewJPanel=new ProfessorViewJPanel();
         splitPane.setRightComponent(professorViewJPanel);
     }//GEN-LAST:event_btnViewClassActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:      
+         int selectedRow = tblProfessorCourse.getSelectedRow();
+         if(selectedRow>=0){
+            int dialogButton=JOptionPane.YES_NO_OPTION;
+            int diaogResult=JOptionPane.showConfirmDialog(null, "Would you like to delete the account details?","Warning", dialogButton);
+            if(diaogResult==JOptionPane.YES_NO_OPTION){
+                Course course=(Course)tblProfessorCourse.getValueAt(selectedRow, 0);
+                professor.getCourseList().remove(course);
+                professor.getCourseHistory().add(course);
+                populateCurrentCourseTable();      
+                populateCourseHistoryTable();      
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
