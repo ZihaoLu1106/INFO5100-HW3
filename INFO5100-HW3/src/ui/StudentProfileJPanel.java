@@ -137,7 +137,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnSave))
-                            .addComponent(btnAddPhoto, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE))))
+                            .addComponent(btnAddPhoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(52, 52, 52))
         );
         StudentProfileJPanelLayout.setVerticalGroup(
@@ -175,7 +175,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                     .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(btnSave)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(StudentProfileJPanel, "card2");

@@ -301,7 +301,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        StudentAddcourseJPanel studentAddcourseJPanel =new StudentAddcourseJPanel(admin);
+        StudentCourseRegisterJPanel studentAddcourseJPanel =new StudentCourseRegisterJPanel();
         this.getParent().add(studentAddcourseJPanel ,"AdminLoading");
         CardLayout cardlayout=(CardLayout)this.getParent().getLayout();
         cardlayout.show(this.getParent(), "StudentAddcourseJPanel");
@@ -348,7 +348,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
        txtcCode.setText(course.getcCode());
        txtcDescription.setText(course.getcDescription());
        txtcTopic.setText(course.getcTopic());  
-       txtcHour.setText(course.getHours());    
-       txtcYear.setText(course.getYears());
+       txtcHour.setText(course.getHours().toString());    
+       txtcYear.setText(course.getYears().toString());
     }
 }
