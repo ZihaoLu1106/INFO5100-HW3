@@ -19,14 +19,14 @@ public class Student extends Person {
     private int studentID;
     private String sUsername;
     private String sPassword;
-    private Map<Course,Character> courseHistory;//store history courses and score
+    private List<Course> courseHistory;//store history courses and score
     private double GPA;
     private boolean isGraduate;
     private List<Course>currentCourses;
     private List<String>passwordHistory;
 
     public Student() {
-        courseHistory=new HashMap<>();
+        courseHistory=new ArrayList<>();
         currentCourses=new ArrayList<>();
         passwordHistory=new ArrayList<>();
         GPA=0.0;
@@ -37,7 +37,7 @@ public class Student extends Person {
     public Student(String sUsername, String sPassword) {
         this.sUsername = sUsername;
         this.sPassword = sPassword;
-        courseHistory=new HashMap<>();
+        courseHistory=new ArrayList<>();
         currentCourses=new ArrayList<>();
         passwordHistory=new ArrayList<>();
         GPA=0.0;
@@ -71,11 +71,11 @@ public class Student extends Person {
         this.sPassword = sPassword;
     }
 
-    public Map<Course, Character> getCourseHistory() {
+    public List<Course> getCourseHistory() {
         return courseHistory;
     }
 
-    public void setCourseHistory(Map<Course, Character> courseHistory) {
+    public void setCourseHistory(List<Course> courseHistory) {
         this.courseHistory = courseHistory;
     }
 
