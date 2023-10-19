@@ -3,6 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
+import java.awt.CardLayout;
+import model.Admin;
+import model.Student;
+import model.Course;
+import javax.swing.JSplitPane;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.Professor;
+
+
 
 import model.Admin;
 import model.Student;
@@ -11,18 +22,25 @@ import model.Student;
  *
  * @author JANFAN
  */
-public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
+public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
+    JSplitPane SplitPane;
+    Admin admin;
+    Student student;
+    Professor professor;
+    Course course;
     /**
      * Creates new form StudentCourseRegisterJPanel
      */
-    Admin admin;
-    Student student;
+
     public StudentCourseRegisterJPanel(Admin admin,Student student) {
         initComponents();
+        this.SplitPane=SplitPane;
         this.admin=admin;
         this.student=student;
-        
+        this.professor=professor;
+        this.course=course;
+
     }
 
     /**
@@ -37,13 +55,13 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         lblCurrentCourse = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCurrentCourse = new javax.swing.JTable();
+        tblAllCourse = new javax.swing.JTable();
         lblCourseHistory = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblCourseHistory = new javax.swing.JTable();
+        tblAllProfessor = new javax.swing.JTable();
         btnJoinClass = new javax.swing.JButton();
         btnViewDetail = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtccode = new javax.swing.JTextField();
         lblCatelog = new javax.swing.JLabel();
         btnSearchCourse = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -61,7 +79,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         lblCurrentCourse.setText("Course List");
 
-        tblCurrentCourse.setModel(new javax.swing.table.DefaultTableModel(
+        tblAllCourse.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -80,20 +98,20 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblCurrentCourse);
-        if (tblCurrentCourse.getColumnModel().getColumnCount() > 0) {
-            tblCurrentCourse.getColumnModel().getColumn(0).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(1).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(2).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(3).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(4).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(5).setResizable(false);
-            tblCurrentCourse.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane1.setViewportView(tblAllCourse);
+        if (tblAllCourse.getColumnModel().getColumnCount() > 0) {
+            tblAllCourse.getColumnModel().getColumn(0).setResizable(false);
+            tblAllCourse.getColumnModel().getColumn(1).setResizable(false);
+            tblAllCourse.getColumnModel().getColumn(2).setResizable(false);
+            tblAllCourse.getColumnModel().getColumn(3).setResizable(false);
+            tblAllCourse.getColumnModel().getColumn(4).setResizable(false);
+            tblAllCourse.getColumnModel().getColumn(5).setResizable(false);
+            tblAllCourse.getColumnModel().getColumn(6).setResizable(false);
         }
 
         lblCourseHistory.setText("Professor List");
 
-        tblCourseHistory.setModel(new javax.swing.table.DefaultTableModel(
+        tblAllProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -112,21 +130,31 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblCourseHistory);
+        jScrollPane2.setViewportView(tblAllProfessor);
 
         btnJoinClass.setText("Join Class");
-
-        btnViewDetail.setText("View Detail");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                btnJoinClassActionPerformed(evt);
             }
         });
 
-        lblCatelog.setText("Course Catelog:");
+        btnViewDetail.setText("View Detail");
+
+        txtccode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtccodeActionPerformed(evt);
+            }
+        });
+
+        lblCatelog.setText("Search Course Code:");
 
         btnSearchCourse.setText("Search");
+        btnSearchCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCourseActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Professor Name:");
 
@@ -184,7 +212,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(lblCatelog)
                                     .addGap(4, 4, 4)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtccode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(btnSearchCourse)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -228,7 +256,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnJoinClass)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtccode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCatelog)
                     .addComponent(btnSearchCourse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -253,9 +281,9 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtccodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtccodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtccodeActionPerformed
 
     private void txtProfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProfNameActionPerformed
         // TODO add your handling code here:
@@ -273,6 +301,25 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTopicActionPerformed
 
+    private void btnJoinClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinClassActionPerformed
+        // TODO add your handling code here:
+        StudentCourseRegisterJPanel studentCourseRegisterJPanel=new StudentCourseRegisterJPanel(admin,student);
+        SplitPane.setRightComponent(studentCourseRegisterJPanel);
+    }//GEN-LAST:event_btnJoinClassActionPerformed
+
+    private void btnSearchCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCourseActionPerformed
+        // TODO add your handling code here:
+        Course code=professor.CourseList.getcCode.getText());
+        //        Account result=accountDirectory.searchAccount(txtAccountNumber.getText());
+         if(code==null){
+            JOptionPane.showMessageDialog(null, "Account number you entered does not exist", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+       else{
+             populateCurrentCourseTable();
+         }
+
+    }//GEN-LAST:event_btnSearchCourseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnJoinClass;
@@ -285,16 +332,52 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblCatelog;
     private javax.swing.JLabel lblCourseHistory;
     private javax.swing.JLabel lblCurrentCourse;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTable tblCourseHistory;
-    private javax.swing.JTable tblCurrentCourse;
+    private javax.swing.JTable tblAllCourse;
+    private javax.swing.JTable tblAllProfessor;
     private javax.swing.JTextField txtProfName;
     private javax.swing.JTextField txtRegion;
     private javax.swing.JTextField txtTopic;
+    private javax.swing.JTextField txtccode;
     // End of variables declaration//GEN-END:variables
+
+    private void populateCurrentCourseTable() {
+        DefaultTableModel model=(DefaultTableModel)tblAllCourse.getModel();
+        model.setRowCount(0);
+        
+        for(Course course : professor.getCourseList()){
+            Object[]row =new Object[8];
+            row[0]=course;
+            row[1]=course.getProfessorName();
+            row[2]=course.getcCode();
+            row[3]=course.getSemester();
+            row[4]=course.getWeekdays();
+            row[5]=course.getHour();
+            row[6]=10;
+            row[7]=8;
+            model.addRow(row);
+        }
+    }
+    private void populateCurrentHistoryTable() {
+        DefaultTableModel model=(DefaultTableModel)tblAllProfessor.getModel();
+        model.setRowCount(0);
+        
+        for(Course course : professor.getCourseList()){
+            Object[]row =new Object[8];
+            row[0]=course;
+            row[1]=course.getcCode();
+            row[2]=course.getProfessorName();
+            row[3]=course.getSemester();
+            row[4]=course.getWeekdays();
+            row[5]=course.getHour();
+            row[6]=10;
+            row[7]=course.getGrade().get(student);
+            model.addRow(row);
+        }
+    }
 }
+
