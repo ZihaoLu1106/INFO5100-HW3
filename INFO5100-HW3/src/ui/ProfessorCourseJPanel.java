@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.table.DefaultTableModel;
 import model.Professor;
+import model.Student;
 
 /**
  *
@@ -187,7 +188,14 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
 
     private void btnViewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewClassActionPerformed
         // TODO add your handling code here:
-        ProfessorViewJPanel professorViewJPanel=new ProfessorViewJPanel();
+        int selectedRowIndex=tblProfessorCourse.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            return;
+        }
+        DefaultTableModel model=(DefaultTableModel)tblProfessorCourse.getModel();
+        Course course=(Course)model.getValueAt(selectedRowIndex,0);
+        ProfessorViewJPanel professorViewJPanel=new ProfessorViewJPanel(splitPane,course);
         splitPane.setRightComponent(professorViewJPanel);
     }//GEN-LAST:event_btnViewClassActionPerformed
 
@@ -201,6 +209,11 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
                 Course course=(Course)tblProfessorCourse.getValueAt(selectedRow, 0);
                 professor.getCourseList().remove(course);
                 professor.getCourseHistory().add(course);
+                for(Student s:course.getStudentList()){
+                    s.getCurrentCourses().remove(course);
+                    s.getCourseHistory().add(course);
+                    admin.getAllCourse().remove(course);
+                }
                 populateCurrentCourseTable();      
                 populateCourseHistoryTable();      
             }

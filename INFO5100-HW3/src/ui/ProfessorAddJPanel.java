@@ -88,6 +88,11 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         });
 
         boxSemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fall", "Spring" }));
+        boxSemester.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxSemesterActionPerformed(evt);
+            }
+        });
 
         boxYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
         boxYear.setToolTipText("");
@@ -135,11 +140,9 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(371, 371, 371))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(100, 100, 100)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,6 +227,10 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel(splitPane, admin,professor);
         splitPane.setRightComponent(professorCourseJPanel);
     }//GEN-LAST:event_SaveActionPerformed
+
+    private void boxSemesterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxSemesterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxSemesterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

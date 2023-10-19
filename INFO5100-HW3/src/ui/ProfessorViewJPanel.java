@@ -4,6 +4,12 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import javax.swing.JSplitPane;
+import javax.swing.table.DefaultTableModel;
+import model.Course;
+import model.Student;
+
 /**
  *
  * @author xsyyy
@@ -13,8 +19,14 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProfessorViewJPanel
      */
-    public ProfessorViewJPanel() {
+    Course course;
+    JSplitPane splitPane;
+
+    public ProfessorViewJPanel(JSplitPane splitPane,Course course) {
         initComponents();
+        this.course=course;
+        this.splitPane=splitPane;
+        populate();
     }
 
     /**
@@ -43,17 +55,16 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         txtHour = new javax.swing.JTextField();
         lblDescr = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDecp = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblStudentTable = new javax.swing.JTable();
         btnEditDetail = new javax.swing.JButton();
         btnSaveDetail = new javax.swing.JButton();
-        btnEditGrade = new javax.swing.JButton();
         btnSaveGrade = new javax.swing.JButton();
-        txtChangeGrade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        boxGrade = new javax.swing.JComboBox<>();
 
         lblCourse1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblCourse1.setText("Course Detail");
@@ -74,11 +85,11 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
 
         lblDescr.setText("Description:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDecp.setColumns(20);
+        txtDecp.setRows(5);
+        jScrollPane1.setViewportView(txtDecp);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblStudentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -103,20 +114,23 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane2.setViewportView(tblStudentTable);
+        if (tblStudentTable.getColumnModel().getColumnCount() > 0) {
+            tblStudentTable.getColumnModel().getColumn(0).setResizable(false);
+            tblStudentTable.getColumnModel().getColumn(1).setResizable(false);
+            tblStudentTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
         btnEditDetail.setText("Edit");
 
         btnSaveDetail.setText("Save");
 
-        btnEditGrade.setText("Edit Grade");
-
         btnSaveGrade.setText("Save Grade ");
+        btnSaveGrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveGradeActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Waitlist: ");
 
@@ -144,6 +158,8 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
             jTable2.getColumnModel().getColumn(0).setResizable(false);
             jTable2.getColumnModel().getColumn(1).setResizable(false);
         }
+
+        boxGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "F" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -205,17 +221,15 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(btnSaveGrade)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnSaveGrade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtChangeGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(boxGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,11 +276,9 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtChangeGrade)
-                            .addComponent(btnEditGrade, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSaveGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(boxGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSaveGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -278,19 +290,32 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSaveGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveGradeActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex=tblStudentTable.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please select a row to delete");
+            return;
+        }
+        DefaultTableModel model=(DefaultTableModel)tblStudentTable.getModel();
+        Student student=(Student)model.getValueAt(selectedRowIndex,0);
+        char grade=boxGrade.getSelectedItem().toString().charAt(0);
+        //put grade to the course recording
+        course.getGrade().put(student,grade);
+        populate();
+    }//GEN-LAST:event_btnSaveGradeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> boxGrade;
     private javax.swing.JButton btnEditDetail;
-    private javax.swing.JButton btnEditGrade;
     private javax.swing.JButton btnSaveDetail;
     private javax.swing.JButton btnSaveGrade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblCourse1;
     private javax.swing.JLabel lblCourseCata;
     private javax.swing.JLabel lblCourseCode;
@@ -300,13 +325,38 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblSemester;
     private javax.swing.JLabel lblWeekday;
     private javax.swing.JLabel lblYear;
-    private javax.swing.JTextField txtChangeGrade;
+    private javax.swing.JTable tblStudentTable;
     private javax.swing.JTextField txtCourseCata;
     private javax.swing.JTextField txtCourseCode;
     private javax.swing.JTextField txtCourseName;
+    private javax.swing.JTextArea txtDecp;
     private javax.swing.JTextField txtHour;
     private javax.swing.JTextField txtSemester;
     private javax.swing.JTextField txtWeekDay;
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
+
+    private void populate() {
+        txtCourseName.setText(course.getcName());
+        txtCourseCode.setText(course.getcCode());
+        txtCourseCata.setText(course.getcTopic());
+        txtHour.setText(course.getHours());
+        txtWeekDay.setText(course.getWeekdays());
+        txtYear.setText(course.getYears());
+        txtSemester.setText(course.getSemesters());
+        txtDecp.setText(course.getcDescription());
+        
+        DefaultTableModel model=(DefaultTableModel)tblStudentTable.getModel();
+        model.setRowCount(0);
+        
+        for(Student s : course.getStudentList()){
+            Object[]row =new Object[3];
+            row[0]=s;
+            row[1]=s.getStudentID();
+            
+            row[2]=course.getGrade().get(s);
+            
+            model.addRow(row);
+        }
+    }
 }
