@@ -226,7 +226,12 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         course.setWeekdays(boxWeekday.getSelectedItem().toString());
         course.setHours(boxHour.getSelectedItem().toString());
         course.setYears(boxYear.getSelectedItem().toString());
-        
+        for(Course course1:professor.getCourseList()){
+            if(course.getTime().equals(course1.getTime())){
+                JOptionPane.showMessageDialog(this,"Time conflict");
+                return;
+            }
+        }
         professor.getCourseList().add(course);
         admin.addCourse(course);
         ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel(splitPane, admin,professor);
