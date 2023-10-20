@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
+import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import model.Course;
 import model.Admin;
@@ -25,7 +26,6 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         this.admin = admin;
         this.professor=professor;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -211,6 +211,11 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
+        
+        if(professor.getCourseList().size()>=2){
+            JOptionPane.showMessageDialog(this,"You have reached max class");
+            return;
+        }
         Course course=new Course();
         course.setProfessorName(professor.getName());
         course.setcName(txtCourseName.getText());

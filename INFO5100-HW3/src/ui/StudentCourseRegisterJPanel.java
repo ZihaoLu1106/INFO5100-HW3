@@ -317,6 +317,11 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
     private void btnJoinClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinClassActionPerformed
         // TODO add your handling code here:
+        if(student.CheckGraduateStatus()){
+            JOptionPane.showMessageDialog(this,"You can choose class since you have finish all requrement for graduate.");
+                return;
+        }
+        
          int selectedRowIndex=tblAllCourse.getSelectedRow();
         if(selectedRowIndex<0){
             JOptionPane.showMessageDialog(this,"Please select a row to delete");
@@ -325,7 +330,23 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         DefaultTableModel model=(DefaultTableModel)tblAllCourse.getModel();
         Course selectedcourse=(Course)model.getValueAt(selectedRowIndex,0);
         //the class needs to add into student currentlist can student will be add into course's student list
+        //check if student have this class
         
+        for(Course course:student.getCurrentCourses()){
+            if(course.getcCode().equals(selectedcourse.getcCode())){
+                JOptionPane.showMessageDialog(this,"You have chosed same class");
+                return;
+            }
+            if(course.getTime().equals(selectedcourse.getTime())){
+                JOptionPane.showMessageDialog(this,"Time conflict");
+                return;
+            }
+        }
+        if(student.getCurrentCourses().size()>=2){
+            JOptionPane.showMessageDialog(this,"You have reached max class");
+                return;
+        }
+        //
         if(selectedcourse.getStudentList().size()<10){
             selectedcourse.getStudentList().add(student);
             student.getCurrentCourses().add(selectedcourse);

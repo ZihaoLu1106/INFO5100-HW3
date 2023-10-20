@@ -149,7 +149,9 @@ public class Course {
         this.years = years;
     }
     
-    
+    public String getTime(){
+    return years+semesters+weekdays+hours;
+    }
 
     @Override
     public String toString(){
