@@ -38,6 +38,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         txtusername.setText(student.getsUsername());
         txtGPA.setText(String.valueOf(student.getGPA()));
         txtGraduate.setText(String.valueOf(student.isIsGraduate()));
+        lblImage.setIcon(student.getImage());
         
     }
 
