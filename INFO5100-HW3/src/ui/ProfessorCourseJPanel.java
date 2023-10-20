@@ -53,6 +53,8 @@ public class ProfessorCourseJPanel extends javax.swing.JPanel {
         tblCourseHistory = new javax.swing.JTable();
         lblCourse1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
         lblCourse.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblCourse.setText("Course History");
 

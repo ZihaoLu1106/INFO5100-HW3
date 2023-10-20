@@ -75,6 +75,8 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         txtPTopic = new javax.swing.JTextField();
         btnSearchProfessor = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
         lblTitle.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         lblTitle.setText("Course Registration");
 
@@ -141,6 +143,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
             tblAllProfessor.getColumnModel().getColumn(5).setResizable(false);
         }
 
+        btnJoinClass.setBackground(new java.awt.Color(117, 194, 246));
         btnJoinClass.setText("Join Class");
         btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +151,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnViewDetail.setText("View Detail");
         btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +167,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         lblCatelog.setText("Search Course Code:");
 
+        btnSearchCourse.setBackground(new java.awt.Color(117, 194, 246));
         btnSearchCourse.setText("Search");
         btnSearchCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,6 +207,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnSearchProfessor.setBackground(new java.awt.Color(117, 194, 246));
         btnSearchProfessor.setText("Search");
         btnSearchProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

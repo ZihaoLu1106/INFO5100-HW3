@@ -59,6 +59,8 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         btnRateMyProfessor = new javax.swing.JButton();
         boxRate = new javax.swing.JComboBox<>();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
         lblTitle.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         lblTitle.setText("Course Management");
 
@@ -85,6 +87,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCurrentCourse);
 
+        btnDropClass.setBackground(new java.awt.Color(117, 194, 246));
         btnDropClass.setText("Drop Class");
         btnDropClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +95,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnJoinClass.setBackground(new java.awt.Color(117, 194, 246));
         btnJoinClass.setText("Join Another Class");
         btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +103,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnViewDetail.setText("View Detail");
         btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +134,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
         lblCourseHistory.setText("Course History:");
 
+        btnRateMyProfessor.setBackground(new java.awt.Color(117, 194, 246));
         btnRateMyProfessor.setText("Rate your professor");
         btnRateMyProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

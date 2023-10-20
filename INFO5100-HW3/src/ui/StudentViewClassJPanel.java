@@ -68,6 +68,9 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         txtCourseTopic = new javax.swing.JTextField();
         txtcCatalog = new javax.swing.JTextField();
 
+        StudentViewClassJPanel.setBackground(new java.awt.Color(251, 238, 172));
+
+        lblCourseName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCourseName.setText("Course Name:");
 
         txtcWeekDay.addActionListener(new java.awt.event.ActionListener() {
@@ -76,8 +79,10 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblSemester.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblSemester.setText("Semester:");
 
+        lblCourseDesc.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCourseDesc.setText("Course Description:");
 
         txtcHour.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +91,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblCourseCode.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCourseCode.setText("Course Code:");
 
         tblWaitlist.setModel(new javax.swing.table.DefaultTableModel(
@@ -109,10 +115,13 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblWaitlist);
 
+        lblWeekDay.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblWeekDay.setText("WeekDay:");
 
+        lblCourseCatalog.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCourseCatalog.setText("Course Catalog:");
 
+        tblCStu.setFont(new java.awt.Font("Toppan Bunkyu Gothic", 0, 14)); // NOI18N
         tblCStu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -134,8 +143,11 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblCStu);
 
+        lblHour.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblHour.setText("Hour:");
 
+        btnBack.setBackground(new java.awt.Color(117, 194, 246));
+        btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +155,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblWatilist.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblWatilist.setText("Waitlist:");
 
         txtcName.addActionListener(new java.awt.event.ActionListener() {
@@ -163,9 +176,12 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblYear.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblYear.setText("Year:");
 
-        lblCourseDetail.setText("Course Detail");
+        lblCourseDetail.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        lblCourseDetail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCourseDetail.setText("COURSE DETAIL");
 
         txtcCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,137 +195,136 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblSemester1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblSemester1.setText("Topic:");
 
         javax.swing.GroupLayout StudentViewClassJPanelLayout = new javax.swing.GroupLayout(StudentViewClassJPanel);
         StudentViewClassJPanel.setLayout(StudentViewClassJPanelLayout);
         StudentViewClassJPanelLayout.setHorizontalGroup(
             StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(lblCourseDetail))
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(lblHour)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(246, 246, 246)
-                        .addComponent(lblCourseDesc)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentViewClassJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnBack)
-                .addGap(152, 152, 152))
+                .addGap(0, 2, Short.MAX_VALUE)
+                .addComponent(lblCourseDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCourseName)
-                            .addComponent(lblSemester1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentViewClassJPanelLayout.createSequentialGroup()
                         .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(txtCourseTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(lblSemester)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                .addComponent(txtcName, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(46, 46, 46)
+                                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                        .addComponent(lblYear)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtcYear, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblCourseName)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtcName, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
                                         .addComponent(lblCourseCode)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtcCode, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(4, 4, 4)
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCourseCatalog)
-                            .addComponent(lblWeekDay))
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                        .addComponent(txtcCode, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentViewClassJPanelLayout.createSequentialGroup()
+                                .addComponent(lblCourseDesc)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                    .addComponent(lblCourseCatalog)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtcCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                    .addComponent(lblSemester1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtCourseTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(txtcCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                                .addGap(45, 45, 45)
+                                .addComponent(lblSemester)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                            .addComponent(lblWeekDay, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblHour, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblYear, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcYear, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38))
+                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentViewClassJPanelLayout.createSequentialGroup()
                                 .addComponent(lblWatilist)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBack)
+                        .addContainerGap())))
         );
+
+        StudentViewClassJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCourseTopic, txtSemester, txtcCatalog, txtcCode, txtcHour, txtcName, txtcWeekDay, txtcYear});
+
         StudentViewClassJPanelLayout.setVerticalGroup(
             StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentViewClassJPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addComponent(lblCourseDetail)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCourseName)
-                    .addComponent(lblCourseCode)
                     .addComponent(lblCourseCatalog)
-                    .addComponent(txtcName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSemester1)
-                    .addComponent(txtCourseTopic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSemester)
-                    .addComponent(txtSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWeekDay)
                     .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblCourseDesc)
-                                .addComponent(lblYear)
-                                .addComponent(txtcYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblHour)
-                            .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCourseCode)
+                    .addComponent(txtcCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCourseTopic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSemester1)
+                    .addComponent(lblHour)
+                    .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblWatilist))
-                .addGap(14, 14, 14)
-                .addComponent(btnBack)
-                .addGap(24, 24, 24))
+                    .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblSemester)
+                        .addComponent(txtSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblYear)
+                        .addComponent(txtcYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCourseDesc)
+                    .addComponent(txtcDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblWatilist))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentViewClassJPanelLayout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addContainerGap())))
         );
+
+        StudentViewClassJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCourseTopic, txtSemester, txtcCatalog, txtcCode, txtcHour, txtcName, txtcWeekDay, txtcYear});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(StudentViewClassJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(StudentViewClassJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(StudentViewClassJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(StudentViewClassJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

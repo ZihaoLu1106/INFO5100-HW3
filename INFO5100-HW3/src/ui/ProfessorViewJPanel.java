@@ -68,6 +68,8 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         txtCourseTopic = new javax.swing.JTextField();
         txtcCatalog = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
         lblCourse1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblCourse1.setText("Course Detail");
 
@@ -123,10 +125,13 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
             tblStudentTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
+        btnEditDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnEditDetail.setText("Edit");
 
+        btnSaveDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnSaveDetail.setText("Save");
 
+        btnSaveGrade.setBackground(new java.awt.Color(117, 194, 246));
         btnSaveGrade.setText("Save Grade ");
         btnSaveGrade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

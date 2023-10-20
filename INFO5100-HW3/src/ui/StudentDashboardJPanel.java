@@ -40,6 +40,10 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
         btnShowProfile = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
 
+        SplitPane.setBackground(new java.awt.Color(251, 238, 172));
+
+        workAreaPanel.setBackground(new java.awt.Color(251, 238, 172));
+
         javax.swing.GroupLayout workAreaPanelLayout = new javax.swing.GroupLayout(workAreaPanel);
         workAreaPanel.setLayout(workAreaPanelLayout);
         workAreaPanelLayout.setHorizontalGroup(
@@ -52,6 +56,8 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
         );
 
         SplitPane.setRightComponent(workAreaPanel);
+
+        controlPanel.setBackground(new java.awt.Color(251, 238, 172));
 
         btnShowCourse.setText("Course");
         btnShowCourse.addActionListener(new java.awt.event.ActionListener() {

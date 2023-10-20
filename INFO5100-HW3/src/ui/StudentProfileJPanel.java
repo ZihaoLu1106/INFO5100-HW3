@@ -84,6 +84,10 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtGradStatus = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
+        StudentProfileJPanel.setBackground(new java.awt.Color(251, 238, 172));
+
         lblImage.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
 
         btnAddPhoto.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
@@ -106,6 +110,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnSave.setBackground(new java.awt.Color(117, 194, 246));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +147,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         lblPicture.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         lblPicture.setText("Picture:");
 
+        btnGraduate.setBackground(new java.awt.Color(117, 194, 246));
         btnGraduate.setText("Apply for graduate");
         btnGraduate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -57,6 +57,8 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         lblCourseCata1 = new javax.swing.JLabel();
         txtCourseTopic = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
         lblCourse1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblCourse1.setText("Add Course Detail");
 

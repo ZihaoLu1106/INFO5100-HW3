@@ -41,6 +41,10 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
         btnSignOut = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
+        controlArea.setBackground(new java.awt.Color(251, 238, 172));
+
         btnCourse.setText("Course");
         btnCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +90,7 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
 
         splitPane.setLeftComponent(controlArea);
 
+        workArea.setBackground(new java.awt.Color(251, 238, 172));
         workArea.setLayout(new java.awt.CardLayout());
         splitPane.setRightComponent(workArea);
 

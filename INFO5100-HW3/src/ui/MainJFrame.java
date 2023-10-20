@@ -50,8 +50,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        MainPanel.setBackground(new java.awt.Color(251, 238, 172));
         MainPanel.setLayout(new java.awt.CardLayout());
 
+        mainPanel.setBackground(new java.awt.Color(251, 238, 172));
+
+        studentSignIn.setBackground(new java.awt.Color(117, 194, 246));
         studentSignIn.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         studentSignIn.setText("Student");
         studentSignIn.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +64,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        professorSignIn1.setBackground(new java.awt.Color(117, 194, 246));
         professorSignIn1.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         professorSignIn1.setText("Professor");
         professorSignIn1.addActionListener(new java.awt.event.ActionListener() {
