@@ -16,7 +16,6 @@ import model.Student;
  * @author xupeihan
  */
 public class StudentViewClassJPanel extends javax.swing.JPanel {
-
     /**
      * Creates new form StudentViewClassJPanel
      */
@@ -46,7 +45,6 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         lblCourseName = new javax.swing.JLabel();
         txtcWeekDay = new javax.swing.JTextField();
         lblSemester = new javax.swing.JLabel();
-        txtCourseCata = new javax.swing.JTextField();
         lblCourseDesc = new javax.swing.JLabel();
         txtcHour = new javax.swing.JTextField();
         lblCourseCode = new javax.swing.JLabel();
@@ -68,6 +66,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         txtcDescription = new javax.swing.JTextField();
         lblSemester1 = new javax.swing.JLabel();
         txtCourseTopic = new javax.swing.JTextField();
+        txtcCatalog = new javax.swing.JTextField();
 
         lblCourseName.setText("Course Name:");
 
@@ -78,12 +77,6 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         });
 
         lblSemester.setText("Semester:");
-
-        txtCourseCata.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCourseCataActionPerformed(evt);
-            }
-        });
 
         lblCourseDesc.setText("Course Description:");
 
@@ -242,10 +235,13 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
                         .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCourseCatalog)
                             .addComponent(lblWeekDay))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCourseCata, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtcWeekDay, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(txtcCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +252,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
                                 .addComponent(lblWatilist)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         StudentViewClassJPanelLayout.setVerticalGroup(
             StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,7 +266,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
                     .addComponent(lblCourseCatalog)
                     .addComponent(txtcName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtcCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCourseCata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(StudentViewClassJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSemester1)
@@ -321,17 +317,12 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcWeekDayActionPerformed
 
-    private void txtCourseCataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCourseCataActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCourseCataActionPerformed
-
     private void txtcHourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcHourActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcHourActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        
         StudentCourseJPanel panel=new StudentCourseJPanel(SplitPane,admin,student);
         SplitPane.setRightComponent(panel);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -375,9 +366,9 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblYear;
     private javax.swing.JTable tblCStu;
     private javax.swing.JTable tblWaitlist;
-    private javax.swing.JTextField txtCourseCata;
     private javax.swing.JTextField txtCourseTopic;
     private javax.swing.JTextField txtSemester;
+    private javax.swing.JTextField txtcCatalog;
     private javax.swing.JTextField txtcCode;
     private javax.swing.JTextField txtcDescription;
     private javax.swing.JTextField txtcHour;
@@ -389,7 +380,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
     private void displayProduct() {
         txtcName.setText(course.getcName());
         txtcCode.setText(course.getcCode());
-        txtCourseCata.setText(course.getcCatalog());
+        txtcCatalog.setText(course.getcTopic());
         txtCourseTopic.setText(course.getcTopic());
         txtcDescription.setText(course.getcDescription());
         txtSemester.setText(course.getSemesters());
@@ -399,12 +390,22 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
        
     }
     private void populateTable() {
+        
+         txtcName.setText(course.getcName());
+        txtcCode.setText(course.getcCode());
+        txtcCatalog.setText(course.getcCatalog());
+        txtCourseTopic.setText(course.getcTopic());
+        txtcDescription.setText(course.getcDescription());
+        txtSemester.setText(course.getSemesters());
+        txtcWeekDay.setText(course.getWeekdays());
+        txtcHour.setText(course.getHours());
+        txtcYear.setText(course.getYears());
              DefaultTableModel model1 = (DefaultTableModel) tblCStu.getModel();
              model1.setRowCount(0);
              for(Student student: course.getStudentList()){
                Object [] row = new Object[2];
                row[0] = student;
-               
+      
                row[1] = student.getStudentID();
                model1.addRow(row);
              }    

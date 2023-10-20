@@ -218,6 +218,7 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
         }
         Course course=new Course();
         course.setProfessorName(professor.getName());
+        course.setcCatalog(txtCourseCata.getText());
         course.setcName(txtCourseName.getText());
         course.setcCode(txtCourseCode.getText());
         course.setcTopic(txtCourseTopic.getText());

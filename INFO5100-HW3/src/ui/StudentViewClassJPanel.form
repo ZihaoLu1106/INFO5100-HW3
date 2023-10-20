@@ -94,10 +94,15 @@
                               <Component id="lblCourseCatalog" min="-2" max="-2" attributes="0"/>
                               <Component id="lblWeekDay" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtCourseCata" min="-2" pref="88" max="-2" attributes="0"/>
-                              <Component id="txtcWeekDay" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtcWeekDay" min="-2" pref="88" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="txtcCatalog" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -115,7 +120,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="85" max="32767" attributes="0"/>
+                  <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -131,7 +136,7 @@
                       <Component id="lblCourseCatalog" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtcName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtcCode" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCourseCata" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtcCatalog" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -192,11 +197,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Semester:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtCourseCata">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCourseCataActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCourseDesc">
           <Properties>
@@ -326,6 +326,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCourseTopic">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtcCatalog">
         </Component>
       </SubComponents>
     </Container>
