@@ -200,7 +200,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
                     .addGroup(StudentViewClassJPanelLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(lblHour)
-                        .addGap(javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtcHour, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(246, 246, 246)
                         .addComponent(lblCourseDesc)
@@ -402,10 +402,10 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
              DefaultTableModel model1 = (DefaultTableModel) tblCStu.getModel();
              model1.setRowCount(0);
              for(Student student: course.getStudentList()){
-               Object [] row = new Object[3];
+               Object [] row = new Object[2];
                row[0] = student;
-               row[1] = student.getName();
-               row[2] = student.getStudentID();
+               
+               row[1] = student.getStudentID();
                model1.addRow(row);
              }    
                
@@ -413,10 +413,10 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
              DefaultTableModel model2 = (DefaultTableModel) tblWaitlist.getModel();
              model2.setRowCount(0);
              for(Student student: course.getWaitList()){
-               Object [] row = new Object[3];
+               Object [] row = new Object[2];
                row[0] = student;
-               row[1] = student.getName();
-               row[2] = student.getStudentID();
+             
+               row[1] = student.getStudentID();
                model2.addRow(row);
                }
     }

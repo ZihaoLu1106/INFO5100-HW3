@@ -40,7 +40,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                           <Component id="lblHour" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="-2147483648" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="txtcHour" min="-2" pref="88" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                           <Component id="lblCourseDesc" min="-2" max="-2" attributes="0"/>

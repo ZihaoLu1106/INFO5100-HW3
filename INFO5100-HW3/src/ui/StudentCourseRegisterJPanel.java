@@ -373,7 +373,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
     private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
         // TODO add your handling code here:
-         int selectedRowIndex= tblAllCourse.getSelectedRow();
+        int selectedRowIndex= tblAllCourse.getSelectedRow();
         if(selectedRowIndex<0){
             JOptionPane.showMessageDialog(this,"Please select a row to delete.");
             return;
