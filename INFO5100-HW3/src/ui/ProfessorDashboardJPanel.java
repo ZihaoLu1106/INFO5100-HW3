@@ -43,23 +43,32 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(251, 238, 172));
 
+        splitPane.setBackground(new java.awt.Color(251, 238, 172));
+        splitPane.setDividerSize(50);
+
         controlArea.setBackground(new java.awt.Color(251, 238, 172));
 
-        btnCourse.setText("Course");
+        btnCourse.setBackground(new java.awt.Color(117, 194, 246));
+        btnCourse.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnCourse.setText("COURSE");
         btnCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCourseActionPerformed(evt);
             }
         });
 
-        btnProfile.setText("Profile");
+        btnProfile.setBackground(new java.awt.Color(117, 194, 246));
+        btnProfile.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnProfile.setText("PROFILE");
         btnProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProfileActionPerformed(evt);
             }
         });
 
-        btnSignOut.setText("Sign out");
+        btnSignOut.setBackground(new java.awt.Color(117, 194, 246));
+        btnSignOut.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnSignOut.setText("SIGN OUT");
         btnSignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignOutActionPerformed(evt);
@@ -70,22 +79,25 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
         controlArea.setLayout(controlAreaLayout);
         controlAreaLayout.setHorizontalGroup(
             controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnProfile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(controlAreaLayout.createSequentialGroup()
-                .addComponent(btnSignOut)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnCourse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnProfile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSignOut))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlAreaLayout.setVerticalGroup(
             controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlAreaLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(btnCourse)
+                .addGap(70, 70, 70)
+                .addComponent(btnCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
-                .addComponent(btnProfile)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
-                .addComponent(btnSignOut)
-                .addGap(82, 82, 82))
+                .addComponent(btnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
+                .addComponent(btnSignOut, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
 
         splitPane.setLeftComponent(controlArea);
