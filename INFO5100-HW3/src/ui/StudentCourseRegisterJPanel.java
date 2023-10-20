@@ -317,6 +317,11 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
     private void btnJoinClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJoinClassActionPerformed
         // TODO add your handling code here:
+        if(student.CheckGraduateStatus()){
+            JOptionPane.showMessageDialog(this,"You can choose class since you have finish all requrement for graduate.");
+                return;
+        }
+        
          int selectedRowIndex=tblAllCourse.getSelectedRow();
         if(selectedRowIndex<0){
             JOptionPane.showMessageDialog(this,"Please select a row to delete");

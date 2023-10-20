@@ -79,6 +79,9 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         lblGender = new javax.swing.JLabel();
         lblImage1 = new javax.swing.JLabel();
         lblPicture = new javax.swing.JLabel();
+        btnGraduate = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtGradStatus = new javax.swing.JTextField();
 
         lblImage.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
 
@@ -138,13 +141,32 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         lblPicture.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         lblPicture.setText("Picture:");
 
+        btnGraduate.setText("Apply for graduate");
+        btnGraduate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraduateActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Status:");
+
         javax.swing.GroupLayout StudentProfileJPanelLayout = new javax.swing.GroupLayout(StudentProfileJPanel);
         StudentProfileJPanel.setLayout(StudentProfileJPanelLayout);
         StudentProfileJPanelLayout.setHorizontalGroup(
             StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtGradStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(437, Short.MAX_VALUE))
             .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
@@ -217,7 +239,13 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
             .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
                 .addGap(304, 304, 304)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtGradStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
             .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
                     .addGap(36, 36, 36)
@@ -348,11 +376,24 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    private void btnGraduateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraduateActionPerformed
+        // TODO add your handling code here:
+        if(student.CheckGraduateStatus()){
+            student.setAlreadyGraduated(true);
+            JOptionPane.showMessageDialog(this, "Congraduation! You get your MS degree!");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "You haven't finish your degree requrement.");
+        }
+    }//GEN-LAST:event_btnGraduateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel StudentProfileJPanel;
     private javax.swing.JButton btnAddPhoto;
+    private javax.swing.JButton btnGraduate;
     private javax.swing.JButton btnSave;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblAge1;
     private javax.swing.JLabel lblAge2;
@@ -370,6 +411,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblstudentID;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtGPA;
+    private javax.swing.JTextField txtGradStatus;
     private javax.swing.JTextField txtGraduate;
     private javax.swing.JTextField txtage;
     private javax.swing.JTextField txtbirthday;

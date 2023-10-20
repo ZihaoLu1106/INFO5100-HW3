@@ -22,6 +22,7 @@ public class Student extends Person {
     private List<Course> courseHistory;//store history courses and score
     private double GPA;
     private boolean isGraduate;
+    private boolean AlreadyGraduated;
     private List<Course>currentCourses;
     private List<String>passwordHistory;
 
@@ -31,11 +32,27 @@ public class Student extends Person {
         passwordHistory=new ArrayList<>();
         GPA=0.0;
         isGraduate=false;
+        AlreadyGraduated=false;
         
         
                 
     }
 
+    public boolean isAlreadyGraduated() {
+        return AlreadyGraduated;
+    }
+
+    public void setAlreadyGraduated(boolean AlreadyGraduated) {
+        this.AlreadyGraduated = AlreadyGraduated;
+    }
+    
+    public boolean CheckGraduateStatus(){
+        if(passwordHistory.size()>=8){
+            isGraduate=true;
+            return true;
+        }
+        return false;
+    }
     public Student(String sUsername, String sPassword) {
         this.sUsername = sUsername;
         this.sPassword = sPassword;
