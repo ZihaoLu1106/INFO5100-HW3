@@ -371,8 +371,8 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                       populateCurrentCourseTable();
                 }
                 else{
-                  JOptionPane.showMessageDialog(null, "The professor information you entered does not exist", "Information", JOptionPane.INFORMATION_MESSAGE); 
-                  break;                
+                      JOptionPane.showMessageDialog(null, "The professor information you entered does not exist", "Information", JOptionPane.INFORMATION_MESSAGE); 
+                      break;                
                 }
           }
     }//GEN-LAST:event_btnSearchProfessorActionPerformed

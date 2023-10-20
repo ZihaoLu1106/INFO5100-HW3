@@ -19,6 +19,7 @@ public class Course {
     private String professorName;
     private String cName;
     private String cCode;
+    private String cCatalog;
     private String cTopic;
     private String cDescription;
     private String semesters;
@@ -28,12 +29,18 @@ public class Course {
     private String weekdays;
     private String hours;
     private String years;
-    
+
+    public String getcCatalog() {
+        return cCatalog;
+    }
+
+    public void setcCatalog(String cCatalog) {
+        this.cCatalog = cCatalog;
+    }
 
     public Course() {
         waitList=new ArrayList<>();
-        studentList=new ArrayList<>();
-        
+        studentList=new ArrayList<>();    
         grade=new HashMap<>();
         //hours=new ArrayList<>();
         //years=new ArrayList<>();

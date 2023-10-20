@@ -146,6 +146,10 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                 .addGap(167, 167, 167)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(437, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentProfileJPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblbirthday)
+                .addGap(261, 261, 261))
             .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
                     .addGap(64, 64, 64)
@@ -185,9 +189,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                                         .addComponent(txtGPA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(lblUsername, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                    .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblAge2)
-                                        .addComponent(lblbirthday))
+                                    .addComponent(lblAge2)
                                     .addGap(23, 23, 23)
                                     .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtlanguage, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
@@ -212,10 +214,15 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(64, 64, 64)))
         );
+
+        StudentProfileJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtGPA, txtlanguage, txtstudentID, txtusername});
+
         StudentProfileJPanelLayout.setVerticalGroup(
             StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                .addGap(304, 304, 304)
+                .addGap(269, 269, 269)
+                .addComponent(lblbirthday)
+                .addGap(18, 18, 18)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(186, Short.MAX_VALUE))
             .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,9 +269,7 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                                 .addComponent(lblAge1)))
                         .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
                             .addGap(30, 30, 30)
-                            .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtbirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblbirthday))))
+                            .addComponent(txtbirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblPicture)
@@ -275,6 +280,8 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                     .addComponent(btnSave)
                     .addGap(36, 36, 36)))
         );
+
+        StudentProfileJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtGPA, txtlanguage, txtstudentID, txtusername});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

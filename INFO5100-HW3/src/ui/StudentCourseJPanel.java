@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
@@ -25,11 +26,13 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
     JSplitPane SplitPane;
     Admin admin;
     Student student;
+
     public StudentCourseJPanel(JSplitPane SplitPane,Admin admin,Student student) {
         initComponents();
         this.SplitPane=SplitPane;
         this.admin=admin;
         this.student=student;
+
         populateCurrentCourseTable();
         populateCourseHistoryTable();
     }
@@ -208,6 +211,15 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
     private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
         // TODO add your handling code here:
+        int selectedRow=tblCurrentCourse.getSelectedRow();
+         if(selectedRow<0){
+                JOptionPane.showMessageDialog(null,"Please select a row from table first to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }     
+        DefaultTableModel model=(DefaultTableModel)tblCurrentCourse.getModel();
+        Course selectedcourse=(Course)model.getValueAt(selectedRow,0);
+        StudentViewClassJPanel studentViewClassJPanel=new StudentViewClassJPanel(selectedcourse, admin,student , SplitPane);
+        SplitPane.setRightComponent(studentViewClassJPanel);
+
     }//GEN-LAST:event_btnViewDetailActionPerformed
 
     private void btnDropClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDropClassActionPerformed
@@ -224,7 +236,6 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         }
         DefaultTableModel model=(DefaultTableModel)tblCurrentCourse.getModel();
         Course selectedCourse=(Course)model.getValueAt(selectedRowIndex,0);
-        
         
         student.getCurrentCourses().remove(selectedCourse);
         JOptionPane.showMessageDialog(this,"Course deleted.");
@@ -321,4 +332,5 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
+
 }
