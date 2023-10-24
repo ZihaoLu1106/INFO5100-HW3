@@ -39,6 +39,7 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
         btnShowCourse = new javax.swing.JButton();
         btnShowProfile = new javax.swing.JButton();
         btnSignOut = new javax.swing.JButton();
+        btnComment = new javax.swing.JButton();
 
         SplitPane.setBackground(new java.awt.Color(251, 238, 172));
         SplitPane.setDividerSize(20);
@@ -88,6 +89,15 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnComment.setBackground(new java.awt.Color(117, 194, 246));
+        btnComment.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnComment.setText("Comment");
+        btnComment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
@@ -95,10 +105,14 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnShowProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSignOut)
-                    .addComponent(btnShowCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(controlPanelLayout.createSequentialGroup()
+                        .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnShowProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSignOut)
+                            .addComponent(btnShowCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnComment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnShowCourse, btnShowProfile, btnSignOut});
@@ -110,7 +124,9 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
                 .addComponent(btnShowCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(btnShowProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 353, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
+                .addComponent(btnComment, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
                 .addComponent(btnSignOut, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -149,9 +165,14 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
         cardlayout.show(this.getParent(),"studentSignIn");
     }//GEN-LAST:event_btnSignOutActionPerformed
 
+    private void btnCommentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCommentActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSplitPane SplitPane;
+    private javax.swing.JButton btnComment;
     private javax.swing.JButton btnShowCourse;
     private javax.swing.JButton btnShowProfile;
     private javax.swing.JButton btnSignOut;
