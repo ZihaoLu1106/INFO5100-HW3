@@ -111,13 +111,17 @@ public class StudentCommentJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String name = txtProfName.getText();
         String comment = txtComment.getText();
+        boolean professorFound = false;
         for(Professor p:admin.getAllProfessor()){
             if(p.getName().equals(name)){
                 p.getComment().add(comment);
-                JOptionPane.showMessageDialog(this,"Successfully comment prof");
+                professorFound = true;
+                JOptionPane.showMessageDialog(this,"Successfully comment professor!");
                 break;
-            }else{
             }
+        }
+        if(!professorFound){
+            JOptionPane.showMessageDialog(this,"Cannot find this professor! Check the name you typed in.");
         }
     }//GEN-LAST:event_btnCommentActionPerformed
 

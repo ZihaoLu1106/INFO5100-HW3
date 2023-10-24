@@ -6,6 +6,7 @@ package ui;
 import java.awt.CardLayout;
 import model.Admin;
 import model.Student;
+import model.Professor;
 /**
  *
  * @author JANFAN
@@ -17,6 +18,7 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
      */
     Student student;
     Admin admin;
+    Professor professor;
     public StudentDashboardJPanel(Admin admin, Student student) {
         initComponents();
         this.admin=admin;
@@ -167,6 +169,8 @@ public class StudentDashboardJPanel extends javax.swing.JPanel {
 
     private void btnCommentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommentActionPerformed
         // TODO add your handling code here:
+        StudentCommentJPanel studentCommentJPanel=new StudentCommentJPanel(professor,admin);
+        SplitPane.setRightComponent(studentCommentJPanel);
     }//GEN-LAST:event_btnCommentActionPerformed
 
 

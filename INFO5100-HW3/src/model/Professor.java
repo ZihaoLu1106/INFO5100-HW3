@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 public class Professor extends Person {
     private int ProfessorID;
     private List<Integer>rank;
+    private List<String>comment;
     private Double rate;
     private String pUsername;
     private String pPassword;
@@ -33,6 +34,7 @@ public class Professor extends Person {
         this.pUsername = pUsername;
         this.pPassword = pPassword;
         rank=new ArrayList<>();
+        comment = new ArrayList<>();
         courseList=new ArrayList<>();
         courseHistory=new ArrayList<>();
         this.name="Not defined";
@@ -45,6 +47,15 @@ public class Professor extends Person {
         this.birthday=LocalDate.of(2023,1,1);
     }
 
+    public List<String> getComment() {
+        return comment;
+    }
+
+    public void setComment(List<String> comment) {
+        this.comment = comment;
+    }
+    
+    
     public Double getRate() {
         return rate;
     }
