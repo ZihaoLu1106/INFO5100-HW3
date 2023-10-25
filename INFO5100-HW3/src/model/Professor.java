@@ -32,6 +32,7 @@ public class Professor extends Person {
 
     public Professor(String pUsername, String pPassword) {
         this.pUsername = pUsername;
+        this.ProfessorID=ProfessorID;
         this.pPassword = pPassword;
         rank=new ArrayList<>();
         comment = new ArrayList<>();

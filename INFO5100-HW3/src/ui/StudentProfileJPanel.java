@@ -82,10 +82,12 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         btnGraduate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtGradStatus = new javax.swing.JTextField();
+        btnsUpdate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(251, 238, 172));
 
         StudentProfileJPanel.setBackground(new java.awt.Color(251, 238, 172));
+        StudentProfileJPanel.setEnabled(false);
 
         lblImage.setBackground(new java.awt.Color(204, 204, 0));
         lblImage.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
@@ -99,17 +101,23 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtsname.setEnabled(false);
+
+        txtEmail.setEnabled(false);
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
 
+        txtGraduate.setEnabled(false);
         txtGraduate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtGraduateActionPerformed(evt);
             }
         });
+
+        txtgender.setEnabled(false);
 
         btnSave.setBackground(new java.awt.Color(117, 194, 246));
         btnSave.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -120,14 +128,22 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtage.setEnabled(false);
+
         lblAge1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblAge1.setText("Region:");
+
+        txtregion.setEnabled(false);
 
         lblAge2.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblAge2.setText("Language:");
 
+        txtlanguage.setEnabled(false);
+
         lblbirthday.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblbirthday.setText("Birthday:");
+
+        txtbirthday.setEnabled(false);
 
         lblStuProfile.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         lblStuProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -142,11 +158,17 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         lblstudentID.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblstudentID.setText("Student ID:");
 
+        txtstudentID.setEnabled(false);
+
         lblUsername.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblUsername.setText("Username:");
 
+        txtusername.setEnabled(false);
+
         lblGPA.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblGPA.setText("GPA:");
+
+        txtGPA.setEnabled(false);
 
         lblAge.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblAge.setText("Age:");
@@ -172,6 +194,17 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel1.setText("Status:");
 
+        txtGradStatus.setEnabled(false);
+
+        btnsUpdate.setBackground(new java.awt.Color(117, 194, 246));
+        btnsUpdate.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnsUpdate.setText("Update");
+        btnsUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout StudentProfileJPanelLayout = new javax.swing.GroupLayout(StudentProfileJPanel);
         StudentProfileJPanel.setLayout(StudentProfileJPanelLayout);
         StudentProfileJPanelLayout.setHorizontalGroup(
@@ -187,63 +220,57 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                             .addComponent(lblStatus)
                             .addComponent(lblGender)
                             .addComponent(lblAge)
-                            .addComponent(lblAge1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtregion, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(lblAge1)))
                     .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblAge2)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtlanguage, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                    .addComponent(txtGradStatus)
+                    .addComponent(txtEmail)
+                    .addComponent(txtGraduate)
+                    .addComponent(txtgender)
+                    .addComponent(txtage)
+                    .addComponent(txtregion)
+                    .addComponent(txtsname))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUsername)
+                            .addComponent(lblstudentID)
+                            .addComponent(lblGPA))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtGPA, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                            .addComponent(txtusername, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                            .addComponent(txtstudentID)))
+                    .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(lblbirthday)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtbirthday, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                .addGap(208, 208, 208)
-                                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtGraduate, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(txtgender, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(txtage, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(txtsname))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentProfileJPanelLayout.createSequentialGroup()
-                                .addContainerGap(120, Short.MAX_VALUE)
+                                .addComponent(lblPicture)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnGraduate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentProfileJPanelLayout.createSequentialGroup()
-                                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtGradStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                                .addComponent(lblAge2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtlanguage, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)))
-                                        .addGap(38, 38, 38)))))
-                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAddPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblUsername)
-                                    .addComponent(lblstudentID)
-                                    .addComponent(lblGPA))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtGPA, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(txtusername, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(txtstudentID)))
-                            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(lblbirthday)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtbirthday, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnSave)
-                                    .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
-                                        .addComponent(lblPicture)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btnAddPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                                .addComponent(btnsUpdate)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(40, 40, 40))
+            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                .addGap(198, 198, 198)
+                .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         StudentProfileJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtGPA, txtlanguage, txtusername});
@@ -291,6 +318,9 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                                 .addComponent(lblPicture)))
                         .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblAge1)
@@ -298,10 +328,11 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblAge2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtlanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(StudentProfileJPanelLayout.createSequentialGroup()
+                                    .addComponent(txtlanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtGradStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, StudentProfileJPanelLayout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addComponent(lblName))
@@ -317,14 +348,12 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, StudentProfileJPanelLayout.createSequentialGroup()
                         .addGap(302, 302, 302)
                         .addComponent(lblAge)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtGradStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(btnSave)
+                .addGap(50, 50, 50)
+                .addGroup(StudentProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnsUpdate)
+                    .addComponent(btnSave))
                 .addGap(40, 40, 40))
         );
 
@@ -413,12 +442,29 @@ public class StudentProfileJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnGraduateActionPerformed
 
+    private void btnsUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsUpdateActionPerformed
+        // TODO add your handling code here:
+       txtstudentID.setEnabled(true);
+        txtsname.setEnabled(true);
+        txtgender.setEnabled(true);
+        txtage.setEnabled(true);
+        txtEmail.setEnabled(true);     
+        txtregion.setEnabled(true);
+        txtlanguage.setEnabled(true);
+        txtbirthday.setEnabled(true);
+        txtusername.setEnabled(true);
+        txtGPA.setEnabled(true);
+        txtGraduate.setEnabled(true);
+        txtGradStatus.setEnabled(true);
+    }//GEN-LAST:event_btnsUpdateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel StudentProfileJPanel;
     private javax.swing.JButton btnAddPhoto;
     private javax.swing.JButton btnGraduate;
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnsUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblAge1;
