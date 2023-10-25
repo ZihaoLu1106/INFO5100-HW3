@@ -34,6 +34,10 @@ public class ProfessorCommentJPanel extends javax.swing.JPanel {
         tblComments = new javax.swing.JTable();
         lblViewComment = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(251, 238, 172));
+
+        jScrollPane1.setBackground(new java.awt.Color(251, 238, 172));
+
         tblComments.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -59,29 +63,28 @@ public class ProfessorCommentJPanel extends javax.swing.JPanel {
             tblComments.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        lblViewComment.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblViewComment.setText("View Comment");
+        lblViewComment.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        lblViewComment.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblViewComment.setText("VIEW COMMENT");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblViewComment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(lblViewComment, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(lblViewComment, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addComponent(lblViewComment)
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
