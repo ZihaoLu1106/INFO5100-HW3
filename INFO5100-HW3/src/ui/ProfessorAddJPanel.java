@@ -93,7 +93,7 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
 
         Save.setBackground(new java.awt.Color(117, 194, 246));
         Save.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        Save.setText("Save");
+        Save.setText("SAVE");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
@@ -162,8 +162,10 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(123, 123, 123)
+                                .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 104, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -199,9 +201,9 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -212,27 +214,49 @@ public class ProfessorAddJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"You have reached max class");
             return;
         }
-        Course course=new Course();
-        course.setProfessorName(professor.getName());
-        course.setcCatalog(txtCourseCata.getText());
-        course.setcName(txtCourseName.getText());
-        course.setcCode(txtCourseCode.getText());
-        course.setcTopic(txtCourseTopic.getText());
-        course.setcDescription(txtDescr.getText());
-        course.setSemester(boxSemester.getSelectedItem().toString());
-        course.setWeekdays(boxWeekday.getSelectedItem().toString());
-        course.setHours(boxHour.getSelectedItem().toString());
-        course.setYears(boxYear.getSelectedItem().toString());
-        for(Course course1:professor.getCourseList()){
-            if(course.getTime().equals(course1.getTime())){
-                JOptionPane.showMessageDialog(this,"Time conflict");
-                return;
+        /*
+          if(txtDoctorName.getText().isEmpty()||
+                 txtDoctorId.getText().isEmpty()||
+                 txtOfficeAddress.getText().isEmpty()||
+                 txtSpecialty.getText().isEmpty()||
+                 txtMedicalLicenseNumber.getText().isEmpty()||
+                 jComboBoxEdu.getSelectedItem().toString().isEmpty()||
+                 txtProfessionalExperience.getText().isEmpty()||
+                 txtLanguagesSpoken.getText().isEmpty()
+                 ){
+             JOptionPane.showMessageDialog(this, "Doctor Information are Empty"); //showbox
+         }
+        */
+          if(txtCourseCata.getText().isEmpty()||txtCourseName.getText().isEmpty()||
+                  txtCourseCode.getText().isEmpty()||txtCourseTopic.getText().isEmpty()||
+                  txtDescr.getText().isEmpty()||boxSemester.getSelectedItem().toString().isEmpty()||
+                  boxWeekday.getSelectedItem().toString().isEmpty()||
+                  boxHour.getSelectedItem().toString().isEmpty()||boxYear.getSelectedItem().toString().isEmpty())
+               JOptionPane.showMessageDialog(this, "Course Information are Empty"); //showbox
+          else{
+                Course course=new Course();
+                course.setProfessorName(professor.getName());
+                course.setcCatalog(txtCourseCata.getText());
+                course.setcName(txtCourseName.getText());
+                course.setcCode(txtCourseCode.getText());
+                course.setcTopic(txtCourseTopic.getText());
+                course.setcDescription(txtDescr.getText());
+                course.setSemester(boxSemester.getSelectedItem().toString());
+                course.setWeekdays(boxWeekday.getSelectedItem().toString());
+                course.setHours(boxHour.getSelectedItem().toString());
+                course.setYears(boxYear.getSelectedItem().toString());
+                for(Course course1:professor.getCourseList()){
+                        if(course.getTime().equals(course1.getTime())){
+                                JOptionPane.showMessageDialog(this,"Time conflict");
+                                return;
             }
         }
         professor.getCourseList().add(course);
         admin.addCourse(course);
         ProfessorCourseJPanel professorCourseJPanel=new ProfessorCourseJPanel(splitPane, admin,professor);
-        splitPane.setRightComponent(professorCourseJPanel);
+        splitPane.setRightComponent(professorCourseJPanel);           
+          }
+        
     }//GEN-LAST:event_SaveActionPerformed
 
     private void boxSemesterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxSemesterActionPerformed

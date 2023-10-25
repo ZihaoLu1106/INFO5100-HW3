@@ -51,15 +51,15 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="txtccode" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnSearchCourse" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSearchCourse" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnJoinClass" min="-2" pref="145" max="-2" attributes="0"/>
+                      <Component id="btnJoinClass" linkSize="1" min="-2" pref="145" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnSearchProfessor" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnViewDetail" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="btnSearchProfessor" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnViewDetail" linkSize="1" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -269,7 +269,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Join Class"/>
+        <Property name="text" type="java.lang.String" value="JOIN CLASS"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJoinClassActionPerformed"/>
@@ -283,7 +283,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="View Detail"/>
+        <Property name="text" type="java.lang.String" value="VIEW DETAIL"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewDetailActionPerformed"/>
@@ -310,7 +310,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Search"/>
+        <Property name="text" type="java.lang.String" value="SEARCH"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchCourseActionPerformed"/>
@@ -376,7 +376,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Search"/>
+        <Property name="text" type="java.lang.String" value="SEARCH"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchProfessorActionPerformed"/>

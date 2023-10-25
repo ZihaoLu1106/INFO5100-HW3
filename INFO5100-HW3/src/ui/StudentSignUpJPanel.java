@@ -75,7 +75,7 @@ public class StudentSignUpJPanel extends javax.swing.JPanel {
 
         btnSignUp.setBackground(new java.awt.Color(117, 194, 246));
         btnSignUp.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnSignUp.setText("Sign Up");
+        btnSignUp.setText("SIGN UP");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignUpActionPerformed(evt);

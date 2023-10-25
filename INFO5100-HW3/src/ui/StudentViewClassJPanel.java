@@ -148,7 +148,7 @@ public class StudentViewClassJPanel extends javax.swing.JPanel {
 
         btnBack.setBackground(new java.awt.Color(117, 194, 246));
         btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnBack.setText("<< Back");
+        btnBack.setText("<< BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);

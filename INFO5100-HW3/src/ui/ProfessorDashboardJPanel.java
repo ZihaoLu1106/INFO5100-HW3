@@ -45,7 +45,7 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(251, 238, 172));
 
         splitPane.setBackground(new java.awt.Color(251, 238, 172));
-        splitPane.setDividerSize(50);
+        splitPane.setDividerSize(20);
 
         controlArea.setBackground(new java.awt.Color(251, 238, 172));
 
@@ -78,7 +78,7 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
 
         btnViewComment.setBackground(new java.awt.Color(117, 194, 246));
         btnViewComment.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnViewComment.setText("Comment");
+        btnViewComment.setText("COMMENT");
         btnViewComment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewCommentActionPerformed(evt);
@@ -89,18 +89,17 @@ public class ProfessorDashboardJPanel extends javax.swing.JPanel {
         controlArea.setLayout(controlAreaLayout);
         controlAreaLayout.setHorizontalGroup(
             controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlAreaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnViewComment, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(controlAreaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(controlAreaLayout.createSequentialGroup()
-                        .addComponent(btnSignOut)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlAreaLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnViewComment, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(btnSignOut, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         controlAreaLayout.setVerticalGroup(
             controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

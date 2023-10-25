@@ -45,7 +45,7 @@ public class StudentSignInJPanel extends javax.swing.JPanel {
 
         btnBack.setBackground(new java.awt.Color(117, 194, 246));
         btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnBack.setText("Back");
+        btnBack.setText("<< BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -58,7 +58,7 @@ public class StudentSignInJPanel extends javax.swing.JPanel {
 
         btnLogin.setBackground(new java.awt.Color(117, 194, 246));
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnLogin.setText("Log in");
+        btnLogin.setText("LOG IN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -103,9 +103,7 @@ public class StudentSignInJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lblUsername)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(7, 7, 7)
-                                        .addComponent(lblPassword)))
+                                    .addComponent(lblPassword))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)

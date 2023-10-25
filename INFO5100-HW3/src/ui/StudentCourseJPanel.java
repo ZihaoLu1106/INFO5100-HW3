@@ -63,7 +63,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("COURES MANAGEMENT");
+        lblTitle.setText("COURSE MANAGEMENT");
 
         lblCurrentCourse.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCurrentCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -92,7 +92,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
         btnDropClass.setBackground(new java.awt.Color(117, 194, 246));
         btnDropClass.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnDropClass.setText("Drop Class");
+        btnDropClass.setText("DROP CLASS");
         btnDropClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDropClassActionPerformed(evt);
@@ -101,7 +101,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
         btnJoinClass.setBackground(new java.awt.Color(117, 194, 246));
         btnJoinClass.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnJoinClass.setText("Join Another Class");
+        btnJoinClass.setText("JOIN ANOTHER CLASS");
         btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJoinClassActionPerformed(evt);
@@ -110,7 +110,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
         btnViewDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnViewDetail.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnViewDetail.setText("View Detail");
+        btnViewDetail.setText("VIEW DETAIL");
         btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewDetailActionPerformed(evt);
@@ -144,7 +144,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
 
         btnRateMyProfessor.setBackground(new java.awt.Color(117, 194, 246));
         btnRateMyProfessor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnRateMyProfessor.setText("Rate your professor");
+        btnRateMyProfessor.setText("RATE YOUR PROFESSOR");
         btnRateMyProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRateMyProfessorActionPerformed(evt);
@@ -175,18 +175,18 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(boxRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnRateMyProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnDropClass, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnJoinClass))
-                            .addComponent(btnViewDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnViewDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(boxRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnRateMyProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDropClass, btnJoinClass, btnViewDetail});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {boxRate, btnDropClass, btnJoinClass, btnRateMyProfessor, btnViewDetail});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

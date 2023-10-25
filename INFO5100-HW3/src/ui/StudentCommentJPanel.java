@@ -51,7 +51,7 @@ public class StudentCommentJPanel extends javax.swing.JPanel {
 
         lblCourse1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         lblCourse1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCourse1.setText("Comment Professor");
+        lblCourse1.setText("COMMENT PROFESSOR");
 
         txtComment.setColumns(20);
         txtComment.setRows(5);

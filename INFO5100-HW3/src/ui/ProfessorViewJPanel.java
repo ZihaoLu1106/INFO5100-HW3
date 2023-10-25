@@ -77,8 +77,12 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         lblCourseName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCourseName.setText("Course Name:");
 
+        txtCourseName.setEnabled(false);
+
         lblCourseCode.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCourseCode.setText("Course Code:");
+
+        txtCourseCode.setEnabled(false);
 
         lblCourseCata.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblCourseCata.setText("Course Catalog:");
@@ -86,20 +90,29 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         lblYear.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblYear.setText("Year:");
 
+        txtYear.setEnabled(false);
+
         lblSemester.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblSemester.setText("Semester:");
+
+        txtSemester.setEnabled(false);
 
         lblWeekday.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblWeekday.setText("WeekDay:");
 
+        txtWeekDay.setEnabled(false);
+
         lblHour.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblHour.setText("Hour:");
+
+        txtHour.setEnabled(false);
 
         lblDescr.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblDescr.setText("Description:");
 
         txtDecp.setColumns(20);
         txtDecp.setRows(5);
+        txtDecp.setEnabled(false);
         jScrollPane1.setViewportView(txtDecp);
 
         tblStudentTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -136,15 +149,20 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
 
         btnEditDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnEditDetail.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnEditDetail.setText("Edit");
+        btnEditDetail.setText("EDIT");
+        btnEditDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditDetailActionPerformed(evt);
+            }
+        });
 
         btnSaveDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnSaveDetail.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnSaveDetail.setText("Save");
+        btnSaveDetail.setText("SAVE");
 
         btnSaveGrade.setBackground(new java.awt.Color(117, 194, 246));
         btnSaveGrade.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnSaveGrade.setText("Save Grade ");
+        btnSaveGrade.setText("SAVE GRADE");
         btnSaveGrade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveGradeActionPerformed(evt);
@@ -184,6 +202,10 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         lblSemester1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblSemester1.setText("Topic:");
 
+        txtCourseTopic.setEnabled(false);
+
+        txtcCatalog.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -202,10 +224,10 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(boxGrade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSaveGrade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnSaveGrade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(boxGrade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -240,17 +262,19 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
                                     .addComponent(txtCourseTopic, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(33, 33, 33))
             .addComponent(lblCourse1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(323, 323, 323)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEditDetail)
                 .addGap(90, 90, 90)
                 .addComponent(btnSaveDetail)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(176, 176, 176))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCourseName, txtCourseTopic, txtYear});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCourseCode, txtWeekDay, txtcCatalog});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEditDetail, btnSaveDetail, btnSaveGrade});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,18 +319,18 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDescr)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEditDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSaveDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addGap(91, 91, 91)
                         .addComponent(boxGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSaveGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEditDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSaveDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,6 +342,8 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCourseName, txtCourseTopic, txtHour, txtYear});
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCourseCode, txtSemester, txtWeekDay, txtcCatalog});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEditDetail, btnSaveDetail, btnSaveGrade});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -335,6 +361,19 @@ public class ProfessorViewJPanel extends javax.swing.JPanel {
         course.getGrade().put(student,grade);
         populate();
     }//GEN-LAST:event_btnSaveGradeActionPerformed
+
+    private void btnEditDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDetailActionPerformed
+        // TODO add your handling code here:
+         txtCourseName.setEnabled(true);
+         txtCourseCode.setEnabled(true);
+         txtcCatalog.setEnabled(true);
+         txtCourseTopic.setEnabled(true);
+         txtDecp.setEnabled(true);
+         txtSemester.setEnabled(true);
+         txtWeekDay.setEnabled(true);
+         txtHour.setEnabled(true);
+         txtYear.setEnabled(true);
+    }//GEN-LAST:event_btnEditDetailActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -33,16 +33,16 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="boxRate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnRateMyProfessor" min="-2" pref="206" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
                               <Component id="btnDropClass" linkSize="2" min="-2" pref="136" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnJoinClass" linkSize="2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="btnViewDetail" linkSize="2" alignment="1" min="-2" pref="138" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="boxRate" linkSize="2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnRateMyProfessor" linkSize="2" min="-2" pref="216" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -87,7 +87,7 @@
           <Font name="Trebuchet MS" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="COURES MANAGEMENT"/>
+        <Property name="text" type="java.lang.String" value="COURSE MANAGEMENT"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCurrentCourse">
@@ -134,7 +134,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Drop Class"/>
+        <Property name="text" type="java.lang.String" value="DROP CLASS"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDropClassActionPerformed"/>
@@ -148,7 +148,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Join Another Class"/>
+        <Property name="text" type="java.lang.String" value="JOIN ANOTHER CLASS"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJoinClassActionPerformed"/>
@@ -162,7 +162,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="View Detail"/>
+        <Property name="text" type="java.lang.String" value="VIEW DETAIL"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewDetailActionPerformed"/>
@@ -212,7 +212,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Rate your professor"/>
+        <Property name="text" type="java.lang.String" value="RATE YOUR PROFESSOR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRateMyProfessorActionPerformed"/>

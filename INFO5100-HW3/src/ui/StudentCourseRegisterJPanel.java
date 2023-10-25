@@ -150,7 +150,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         btnJoinClass.setBackground(new java.awt.Color(117, 194, 246));
         btnJoinClass.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnJoinClass.setText("Join Class");
+        btnJoinClass.setText("JOIN CLASS");
         btnJoinClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJoinClassActionPerformed(evt);
@@ -159,7 +159,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         btnViewDetail.setBackground(new java.awt.Color(117, 194, 246));
         btnViewDetail.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnViewDetail.setText("View Detail");
+        btnViewDetail.setText("VIEW DETAIL");
         btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewDetailActionPerformed(evt);
@@ -177,7 +177,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         btnSearchCourse.setBackground(new java.awt.Color(117, 194, 246));
         btnSearchCourse.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnSearchCourse.setText("Search");
+        btnSearchCourse.setText("SEARCH");
         btnSearchCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchCourseActionPerformed(evt);
@@ -222,7 +222,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
 
         btnSearchProfessor.setBackground(new java.awt.Color(117, 194, 246));
         btnSearchProfessor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnSearchProfessor.setText("Search");
+        btnSearchProfessor.setText("SEARCH");
         btnSearchProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchProfessorActionPerformed(evt);
@@ -272,6 +272,9 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
                             .addComponent(btnViewDetail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnJoinClass, btnSearchCourse, btnSearchProfessor, btnViewDetail});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()

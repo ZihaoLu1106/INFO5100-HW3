@@ -64,7 +64,7 @@
           <Font name="Trebuchet MS" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Comment Professor"/>
+        <Property name="text" type="java.lang.String" value="COMMENT PROFESSOR"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

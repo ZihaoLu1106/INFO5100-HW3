@@ -48,7 +48,7 @@ public class ProfessorSignInJPanel extends javax.swing.JPanel {
 
         btnBack.setBackground(new java.awt.Color(117, 194, 246));
         btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnBack.setText("Back");
+        btnBack.setText("<< BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -73,7 +73,7 @@ public class ProfessorSignInJPanel extends javax.swing.JPanel {
 
         btnLogin.setBackground(new java.awt.Color(117, 194, 246));
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnLogin.setText("Log in");
+        btnLogin.setText("LOG IN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);

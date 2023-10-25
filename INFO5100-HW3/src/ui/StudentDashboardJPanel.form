@@ -76,18 +76,16 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnShowProfile" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnShowProfile" linkSize="1" min="-2" pref="101" max="-2" attributes="0"/>
-                                  <Component id="btnSignOut" linkSize="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnShowCourse" linkSize="1" min="-2" pref="101" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btnSignOut" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="btnComment" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnShowCourse" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -163,7 +161,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Trebuchet MS" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Comment"/>
+                <Property name="text" type="java.lang.String" value="COMMENT"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommentActionPerformed"/>

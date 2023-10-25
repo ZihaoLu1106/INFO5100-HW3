@@ -108,7 +108,7 @@ public class ProfessorProfileJPanel extends javax.swing.JPanel {
 
         btnSave.setBackground(new java.awt.Color(117, 194, 246));
         btnSave.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnSave.setText("Save");
+        btnSave.setText("SAVE");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -119,7 +119,7 @@ public class ProfessorProfileJPanel extends javax.swing.JPanel {
 
         btnChangeImage.setBackground(new java.awt.Color(117, 194, 246));
         btnChangeImage.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnChangeImage.setText("Change Image");
+        btnChangeImage.setText("CHANGE IMAGE");
         btnChangeImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChangeImageActionPerformed(evt);
@@ -133,7 +133,7 @@ public class ProfessorProfileJPanel extends javax.swing.JPanel {
 
         btnUpdate.setBackground(new java.awt.Color(117, 194, 246));
         btnUpdate.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnUpdate.setText("Update");
+        btnUpdate.setText("UPDATE");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -194,7 +194,7 @@ public class ProfessorProfileJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(lblCourse1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -218,7 +218,7 @@ public class ProfessorProfileJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnChangeImage))
+                    .addComponent(btnChangeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,8 +229,8 @@ public class ProfessorProfileJPanel extends javax.swing.JPanel {
                     .addComponent(txtLang, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnUpdate))
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(56, 56, 56))
         );
 

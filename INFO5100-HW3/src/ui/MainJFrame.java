@@ -57,7 +57,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         studentSignIn.setBackground(new java.awt.Color(117, 194, 246));
         studentSignIn.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
-        studentSignIn.setText("Student");
+        studentSignIn.setText("STUDENT");
         studentSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 studentSignInActionPerformed(evt);
@@ -66,7 +66,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         professorSignIn1.setBackground(new java.awt.Color(117, 194, 246));
         professorSignIn1.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
-        professorSignIn1.setText("Professor");
+        professorSignIn1.setText("PROFESSOR");
         professorSignIn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 professorSignIn1ActionPerformed(evt);
@@ -74,6 +74,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 60)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SIGN IN");
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -83,10 +84,11 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(331, Short.MAX_VALUE)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(studentSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(professorSignIn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(361, 361, 361))
+                    .addComponent(professorSignIn1)
+                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(studentSignIn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)))
+                .addGap(352, 352, 352))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,10 +96,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(150, 150, 150)
                 .addComponent(jLabel1)
                 .addGap(58, 58, 58)
-                .addComponent(studentSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
                 .addComponent(professorSignIn1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(studentSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         MainPanel.add(mainPanel, "mainPanel");

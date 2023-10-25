@@ -37,10 +37,10 @@
                           <Component id="jScrollPane3" min="-2" pref="463" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="463" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="boxGrade" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
-                          <Component id="btnSaveGrade" alignment="1" min="-2" pref="125" max="-2" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnSaveGrade" linkSize="6" max="32767" attributes="0"/>
+                          <Component id="boxGrade" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -90,12 +90,12 @@
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
           <Component id="lblCourse1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="323" max="-2" attributes="0"/>
-              <Component id="btnEditDetail" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-              <Component id="btnSaveDetail" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnEditDetail" linkSize="6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+              <Component id="btnSaveDetail" linkSize="6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -155,20 +155,20 @@
                   <Component id="lblDescr" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="91" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnEditDetail" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="btnSaveDetail" min="-2" pref="34" max="-2" attributes="0"/>
-              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                       <Component id="boxGrade" min="-2" pref="34" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnSaveGrade" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btnSaveGrade" linkSize="5" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnEditDetail" linkSize="5" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="btnSaveDetail" linkSize="5" min="-2" pref="34" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="119" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -201,6 +201,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCourseName">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCourseCode">
       <Properties>
@@ -211,6 +214,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCourseCode">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCourseCata">
       <Properties>
@@ -229,6 +235,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtYear">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSemester">
       <Properties>
@@ -239,6 +248,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSemester">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblWeekday">
       <Properties>
@@ -249,6 +261,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtWeekDay">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblHour">
       <Properties>
@@ -259,6 +274,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtHour">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDescr">
       <Properties>
@@ -279,6 +297,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -333,8 +352,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Edit"/>
+        <Property name="text" type="java.lang.String" value="EDIT"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditDetailActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSaveDetail">
       <Properties>
@@ -344,7 +366,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Save"/>
+        <Property name="text" type="java.lang.String" value="SAVE"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSaveGrade">
@@ -355,7 +377,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Save Grade "/>
+        <Property name="text" type="java.lang.String" value="SAVE GRADE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveGradeActionPerformed"/>
@@ -430,8 +452,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCourseTopic">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtcCatalog">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
