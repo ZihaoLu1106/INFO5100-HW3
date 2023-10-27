@@ -41,7 +41,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
         this.professor=professor;
         this.course=course;
         populateCurrentCourseTable();
-        populateCurrentHistoryTable();
+        populateAllProfessorTable();
     }
 
     /**
@@ -456,7 +456,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
-    private void populateCurrentHistoryTable() {
+    private void populateAllProfessorTable() {
         DefaultTableModel model=(DefaultTableModel)tblAllProfessor.getModel();
         model.setRowCount(0);
         
@@ -467,7 +467,7 @@ public class StudentCourseRegisterJPanel extends javax.swing.JPanel {
             row[2]=p.getRegion();
             row[3]=p.getLanguage();
             row[4]=p.getTopic();
-            row[5]=p.getRank();
+            row[5]=p.getRate();
             model.addRow(row);
         }
     }

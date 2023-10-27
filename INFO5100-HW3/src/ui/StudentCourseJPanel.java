@@ -242,8 +242,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         // drop class:
         //1.student delete this class in the current course
         //2.course delete the student in student list
-        //3.course check waitlist if have student move student to student list;
-        
+        //3.course check waitlist if have student move student to student list;x
         int selectedRowIndex=tblCurrentCourse.getSelectedRow();
         if(selectedRowIndex<0){
             JOptionPane.showMessageDialog(this,"Please select a row to delete");
@@ -256,6 +255,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this,"Course deleted.");
         
         populateCurrentCourseTable();
+
         
         //course delete the student in student list
         selectedCourse.getStudentList().remove(student);
@@ -282,7 +282,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         Course selectedCourse=(Course)model.getValueAt(selectedRowIndex,0);
         int rate=Integer.parseInt(boxRate.getSelectedItem().toString());
         String pName=selectedCourse.getProfessorName();
-        
+         JOptionPane.showMessageDialog(this,"Success!");
         for(Professor p:admin.getAllProfessor()){
             if(p.getName().equals(pName)){
                 p.getRank().add(rate);
@@ -336,7 +336,7 @@ public class StudentCourseJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(Course course : student.getCourseHistory()){
-            Object[]row =new Object[7];
+            Object[]row =new Object[8];
             row[0]=course;
             row[1]=course.getProfessorName();
             row[2]=course.getSemester();

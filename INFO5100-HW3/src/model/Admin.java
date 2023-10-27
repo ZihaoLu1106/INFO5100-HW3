@@ -80,10 +80,5 @@ public class Admin {
 
     public void setAllCourse(List<Course> allCourse) {
         this.allCourse = allCourse;
-    }
-    
-
-    
-    
-    
+    }  
 }
